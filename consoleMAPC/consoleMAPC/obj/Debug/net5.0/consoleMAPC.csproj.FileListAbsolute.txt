@@ -1,0 +1,16 @@
+C:\Users\sch3f\source\repos\Milos-AmazingPhysicsCalculator\consoleMAPC\consoleMAPC\bin\Debug\net5.0\consoleMAPC.exe
+C:\Users\sch3f\source\repos\Milos-AmazingPhysicsCalculator\consoleMAPC\consoleMAPC\bin\Debug\net5.0\consoleMAPC.deps.json
+C:\Users\sch3f\source\repos\Milos-AmazingPhysicsCalculator\consoleMAPC\consoleMAPC\bin\Debug\net5.0\consoleMAPC.runtimeconfig.json
+C:\Users\sch3f\source\repos\Milos-AmazingPhysicsCalculator\consoleMAPC\consoleMAPC\bin\Debug\net5.0\consoleMAPC.runtimeconfig.dev.json
+C:\Users\sch3f\source\repos\Milos-AmazingPhysicsCalculator\consoleMAPC\consoleMAPC\bin\Debug\net5.0\consoleMAPC.dll
+C:\Users\sch3f\source\repos\Milos-AmazingPhysicsCalculator\consoleMAPC\consoleMAPC\bin\Debug\net5.0\ref\consoleMAPC.dll
+C:\Users\sch3f\source\repos\Milos-AmazingPhysicsCalculator\consoleMAPC\consoleMAPC\bin\Debug\net5.0\consoleMAPC.pdb
+C:\Users\sch3f\source\repos\Milos-AmazingPhysicsCalculator\consoleMAPC\consoleMAPC\obj\Debug\net5.0\consoleMAPC.csproj.AssemblyReference.cache
+C:\Users\sch3f\source\repos\Milos-AmazingPhysicsCalculator\consoleMAPC\consoleMAPC\obj\Debug\net5.0\consoleMAPC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sch3f\source\repos\Milos-AmazingPhysicsCalculator\consoleMAPC\consoleMAPC\obj\Debug\net5.0\consoleMAPC.AssemblyInfoInputs.cache
+C:\Users\sch3f\source\repos\Milos-AmazingPhysicsCalculator\consoleMAPC\consoleMAPC\obj\Debug\net5.0\consoleMAPC.AssemblyInfo.cs
+C:\Users\sch3f\source\repos\Milos-AmazingPhysicsCalculator\consoleMAPC\consoleMAPC\obj\Debug\net5.0\consoleMAPC.csproj.CoreCompileInputs.cache
+C:\Users\sch3f\source\repos\Milos-AmazingPhysicsCalculator\consoleMAPC\consoleMAPC\obj\Debug\net5.0\consoleMAPC.dll
+C:\Users\sch3f\source\repos\Milos-AmazingPhysicsCalculator\consoleMAPC\consoleMAPC\obj\Debug\net5.0\ref\consoleMAPC.dll
+C:\Users\sch3f\source\repos\Milos-AmazingPhysicsCalculator\consoleMAPC\consoleMAPC\obj\Debug\net5.0\consoleMAPC.pdb
+C:\Users\sch3f\source\repos\Milos-AmazingPhysicsCalculator\consoleMAPC\consoleMAPC\obj\Debug\net5.0\consoleMAPC.genruntimeconfig.cache
