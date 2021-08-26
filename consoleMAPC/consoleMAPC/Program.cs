@@ -41,7 +41,8 @@ namespace consoleMAPC
                                     localSwitch = true;
                                     break;
                                 case 'd'://dráha
-                                    //do
+                                    Draha();
+                                    localSwitch = true;
                                     break;
                                 case 'e'://hybnost
                                     //do
@@ -104,9 +105,6 @@ namespace consoleMAPC
                 }
             } while (quitSwitch == false);
 
-
-
-
         }
         public static void Menu()
         {
@@ -140,7 +138,33 @@ namespace consoleMAPC
         public static void MechanikaCas()
         {
             Console.WriteLine("\nPočítáme dobu vzhledem k\na. rychlosti, nebo \nb. ke zrychlení?");
+            char vyber = char.ToLower(Console.ReadKey().KeyChar);
+            do
+            {
+                Console.WriteLine("Prosím vyberte možnost 'a' nebo 'b'");
+                vyber = char.ToLower(Console.ReadKey().KeyChar);
+            } while ((vyber != 'a')||(vyber !='b'));
+            if (vyber == 'a')
+            {
+                Console.WriteLine("Zvolili jste možnost a");
+            }
+            
         }
+        public static void Draha()
+        {
+            Console.WriteLine("\nZadejte rychlost v m.s^-1");
+            double rychlost = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Zadejte čas v s");
+            double cas = Convert.ToDouble(Console.ReadLine());
+            double vysledenaDraha = rychlost * cas;
+            Console.WriteLine("\nVýsledek je {0} m", vysledenaDraha);
+            Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
+            Console.ReadKey();
+        }
+
+
+
+
         public static void MoleTermik()
         {
             Console.Clear();
