@@ -6,19 +6,19 @@ namespace consoleMAPC
     {
         static void Main(string[] args)//TODO převodník jednotek
         {
-            bool quitSwitch = false;
-            char choice;
-            Menu();
+            bool quitSwitch = false; //makes the do-while loop run, thus letting user choose again and agian
+            char choice; //used to navigate menu
+            Menu(); //clears console window and writes wall of text
 
             do
             {
-                choice = Console.ReadKey().KeyChar;
+                choice = Console.ReadKey().KeyChar; //reads keypress
                 switch (choice)
                 {
                     case '1': //mechanika
-                        bool localSwitch = false;
-                        char localChoice;
-                        int easterEgg = 0;
+                        bool localSwitch = false; //same functionality as quitSwitch, just in another loop
+                        char localChoice; //used to navigate submenu
+                        int easterEgg = 0; // :)
                         Console.Clear();
                         Console.WriteLine("Mechanika\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou (a-j)\n");
                         Console.WriteLine("a. rychlost\nb. zrychlení\nc. čas\nd. dráhu\ne. hybnost\nf. sílu\ng. výkon\nh. rychlost vody\ni. tlak\nj. hustota");
@@ -139,14 +139,36 @@ namespace consoleMAPC
         {
             Console.WriteLine("\nPočítáme dobu vzhledem k\na. rychlosti, nebo \nb. ke zrychlení?");
             char vyber = char.ToLower(Console.ReadKey().KeyChar);
-            do
+            while ((vyber != 'a') || (vyber != 'b')) //NEFUNKČNÍ PODMÍNKA
             {
                 Console.WriteLine("Prosím vyberte možnost 'a' nebo 'b'");
                 vyber = char.ToLower(Console.ReadKey().KeyChar);
-            } while ((vyber != 'a')||(vyber !='b'));
+            }
             if (vyber == 'a')
             {
                 Console.WriteLine("Zvolili jste možnost a");
+
+                Console.WriteLine("\nZadejte dráhu v m");
+                double draha = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Zadejte rychost v m.s^-1");
+                double rychlost = Convert.ToDouble(Console.ReadLine());
+                double vysledenyCas = draha / rychlost;
+                Console.WriteLine("\nVýsledek je {0} s", vysledenyCas);
+                Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
+                Console.ReadKey();
+
+            } else
+            {
+                Console.WriteLine("Zvolili jste b");
+
+                Console.WriteLine("\nZadejte změnu rychlosti v m.s^-1");
+                double deltaRychlost = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Zadejte zrychleni v m.s^-2");
+                double zrychleni = Convert.ToDouble(Console.ReadLine());
+                double vysledenyCas = deltaRychlost / zrychleni;
+                Console.WriteLine("\nVýsledek je {0} s", vysledenyCas);
+                Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
+                Console.ReadKey();
             }
             
         }
