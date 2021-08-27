@@ -45,22 +45,22 @@ namespace consoleMAPC
                                     localSwitch = true;
                                     break;
                                 case 'e'://hybnost
-                                    //do
+                                    Hybnost(); //ještě nefunguje 
                                     break;
                                 case 'f'://síla
-                                    //do
+                                    Sila();
                                     break;
                                 case 'g'://výkon
-                                    //do
+                                    Vykon();
                                     break;
                                 case 'h'://rychlost vody
-                                    //do
+                                    RychlostVody();
                                     break;
                                 case 'i'://tlak
-                                    //do
+                                    Tlak();
                                     break;
                                 case 'j'://hustota
-                                    //do
+                                    Hustota();
                                     break;
                                 default:
                                     if (easterEgg < 8)
@@ -139,7 +139,7 @@ namespace consoleMAPC
         {
             Console.WriteLine("\nPočítáme dobu vzhledem k\na. rychlosti, nebo \nb. ke zrychlení?");
             char vyber = char.ToLower(Console.ReadKey().KeyChar);
-            while ((vyber != 'a') && (vyber != 'b')) //NEFUNKČNÍ PODMÍNKA
+            while ((vyber != 'a') && (vyber != 'b'))
             {
                 Console.WriteLine("Prosím vyberte možnost 'a' nebo 'b'");
                 vyber = char.ToLower(Console.ReadKey().KeyChar);
@@ -183,10 +183,37 @@ namespace consoleMAPC
             Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
             Console.ReadKey();
         }
+        public static void Hybnost()
+        {
+            Console.WriteLine("\nZadejte hmotnost v kg");
+            double hmotnost = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Zadejte rychlost v m.s^-1");
+            double rychlost = Convert.ToDouble(Console.ReadLine());
+            double vysledenaHybnost = hmotnost * rychlost;
+            Console.WriteLine("\nVýsledek je {0} kg·m·s^-1", vysledenaHybnost);
+            Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
+            Console.ReadKey();
+        }
+        public static void Sila()
+        {
 
+        }
+        public static void Vykon()
+        {
 
+        }
+        public static void RychlostVody()
+        {
 
+        }
+        public static void Tlak()
+        {
 
+        }
+        public static void Hustota()
+        {
+
+        }
         public static void MoleTermik()
         {
             Console.Clear();
