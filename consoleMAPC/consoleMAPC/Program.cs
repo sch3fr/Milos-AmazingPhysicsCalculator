@@ -139,7 +139,7 @@ namespace consoleMAPC
         {
             Console.WriteLine("\nPočítáme dobu vzhledem k\na. rychlosti, nebo \nb. ke zrychlení?");
             char vyber = char.ToLower(Console.ReadKey().KeyChar);
-            while ((vyber != 'a') || (vyber != 'b')) //NEFUNKČNÍ PODMÍNKA
+            while ((vyber != 'a') && (vyber != 'b')) //NEFUNKČNÍ PODMÍNKA
             {
                 Console.WriteLine("Prosím vyberte možnost 'a' nebo 'b'");
                 vyber = char.ToLower(Console.ReadKey().KeyChar);
