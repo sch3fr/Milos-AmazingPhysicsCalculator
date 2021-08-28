@@ -29,23 +29,44 @@ namespace consoleMAPC
                             switch (localChoice)
                             {
                                 case 'a'://rychlost
-                                    Rychlost();
-                                    localSwitch = true;
+                                    Console.WriteLine("\nZadejte dráhu v m");
+                                    double adraha = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("Zadejte čas v s");
+                                    double acas = Convert.ToDouble(Console.ReadLine());
+                                    double vyslednaRychlost = FunkceDeleni(adraha, acas);
+                                    Console.WriteLine("\nVýsledek je {0} m.s^-1", vyslednaRychlost);
+                                    localSwitch = Solved();
                                     break;
                                 case 'b'://zrychlení
-                                    Zrychleni();
-                                    localSwitch = true;
+                                    Console.WriteLine("\nZadejte změnu rychlosti v m.s^-1");
+                                    double brychlostDelta = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("Zadejte čas v s");
+                                    double bcasDelta = Convert.ToDouble(Console.ReadLine());
+                                    double vysledneZrychleni = FunkceDeleni(brychlostDelta, bcasDelta);
+                                    Console.WriteLine("\nVýsledek je {0} m.s^-2", vysledneZrychleni);
+                                    localSwitch = Solved();
                                     break;
                                 case 'c'://čas
-                                    MechanikaCas();
-                                    localSwitch = true;
+                                    MechanikaCas(); //complicated enough to validate its own method
+                                    localSwitch = Solved();
                                     break;
                                 case 'd'://dráha
-                                    Draha();
-                                    localSwitch = true;
+                                    Console.WriteLine("\nZadejte rychlost v m.s^-1");
+                                    double drychlost = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("Zadejte čas v s");
+                                    double dcas = Convert.ToDouble(Console.ReadLine());
+                                    double vysledenaDraha = FunkceNasobeni(drychlost, dcas);
+                                    Console.WriteLine("\nVýsledek je {0} m", vysledenaDraha);
+                                    localSwitch = Solved();
                                     break;
                                 case 'e'://hybnost
-                                    Hybnost(); //ještě nefunguje 
+                                    Console.WriteLine("\nZadejte hmotnost v kg");
+                                    double ehmotnost = Convert.ToDouble(Console.ReadLine());
+                                    Console.WriteLine("Zadejte rychlost v m.s^-1");
+                                    double erychlost = Convert.ToDouble(Console.ReadLine());
+                                    double vysledenaHybnost = FunkceNasobeni(erychlost,ehmotnost);
+                                    Console.WriteLine("\nVýsledek je {0} m", vysledenaHybnost);
+                                    localSwitch = Solved();
                                     break;
                                 case 'f'://síla
                                     Sila();
@@ -79,22 +100,22 @@ namespace consoleMAPC
                         Menu();
                         break;
                     case '2': //molekulová fyzika a termika
-                        MoleTermik();
+                        //MoleTermik();
                         break;
                     case '3': //mechanické kmitání a vlnění
-                        KmitVln();
+                        //KmitVln();
                         break;
                     case '4': //elektřina a magnetismus
-                        ElMag();
+                        //ElMag();
                         break;
                     case '5':  //optika
-                        Optika();
+                        //Optika();
                         break;
                     case '6': //speciální teroie relativity
-                        Str();
+                        //Str();
                         break;
                     case '7': //fyzika mikrosvěta
-                        Mikro();
+                        //Mikro();
                         break;
                     case '0':
                         quitSwitch = true;
@@ -113,27 +134,23 @@ namespace consoleMAPC
             Console.WriteLine("\nVyberte si obor, z něhož je váš příklad.");
             Console.WriteLine("\n1. Mechanika\n2. Molekulová fyzika a termika\n3. Mechanické kmitání a vlnění\n4. Elektřina a magnetismus\n5. Optika\n6. Teorie relativity\n7. Fyzika mikrosvěta\n\nZmáčkněte 0 pro ukončení programu.");
         }
-        public static void Rychlost()
+        public static bool Solved()
         {
-            Console.WriteLine("\nZadejte dráhu v m");
-            double draha = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Zadejte čas v s");
-            double cas = Convert.ToDouble(Console.ReadLine());
-            double vysledenaRychlost = draha / cas;
-            Console.WriteLine("\nVýsledek je {0} m.s^-1", vysledenaRychlost);
             Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
             Console.ReadKey();
+            return true;
         }
-        public static void Zrychleni()
+        public static double FunkceNasobeni(double num1, double num2)
         {
-            Console.WriteLine("\nZadejte změnu rychlosti v m.s^-1");
-            double rychlostDelta = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Zadejte čas v s");
-            double casDelta = Convert.ToDouble(Console.ReadLine());
-            double vysledneZrychleni = rychlostDelta / casDelta;
-            Console.WriteLine("\nVýsledek je {0} m.s^-2", vysledneZrychleni);
-            Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
-            Console.ReadKey();
+            double vysledek;
+            vysledek = num1 * num2;
+            return vysledek;
+        }
+        public static double FunkceDeleni(double num1, double num2)
+        {
+            double vysledek;
+            vysledek = num1 / num2;
+            return vysledek;
         }
         public static void MechanikaCas()
         {
@@ -172,78 +189,5 @@ namespace consoleMAPC
             }
             
         }
-        public static void Draha()
-        {
-            Console.WriteLine("\nZadejte rychlost v m.s^-1");
-            double rychlost = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Zadejte čas v s");
-            double cas = Convert.ToDouble(Console.ReadLine());
-            double vysledenaDraha = rychlost * cas;
-            Console.WriteLine("\nVýsledek je {0} m", vysledenaDraha);
-            Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
-            Console.ReadKey();
-        }
-        public static void Hybnost()
-        {
-            Console.WriteLine("\nZadejte hmotnost v kg");
-            double hmotnost = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Zadejte rychlost v m.s^-1");
-            double rychlost = Convert.ToDouble(Console.ReadLine());
-            double vysledenaHybnost = hmotnost * rychlost;
-            Console.WriteLine("\nVýsledek je {0} kg·m·s^-1", vysledenaHybnost);
-            Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
-            Console.ReadKey();
-        }
-        public static void Sila()
-        {
-
-        }
-        public static void Vykon()
-        {
-
-        }
-        public static void RychlostVody()
-        {
-
-        }
-        public static void Tlak()
-        {
-
-        }
-        public static void Hustota()
-        {
-
-        }
-        public static void MoleTermik()
-        {
-            Console.Clear();
-            Console.WriteLine("Molekulová fyzika a termika");
-        }
-        public static void KmitVln()
-        {
-            Console.Clear();
-            Console.WriteLine("Kmitání a vlnění");
-        }
-        public static void ElMag()
-        {
-            Console.Clear();
-            Console.WriteLine("Elektřina a magnetismus");
-        }
-        public static void Optika()
-        {
-            Console.Clear();
-            Console.WriteLine("Optika");
-        }
-        public static void Str()
-        {
-            Console.Clear();
-            Console.WriteLine("Speciální teorie relativity");
-        }
-        public static void Mikro()
-        {
-            Console.Clear();
-            Console.WriteLine("Fyzika mikrosvěta");
-        }
-
     }
 }
