@@ -16,107 +16,26 @@ namespace consoleMAPC
                 switch (choice)
                 {
                     case '1': //mechanika
-                        bool localSwitch = false; //same functionality as quitSwitch, just in another loop
-                        char localChoice; //used to navigate submenu
-                        int easterEgg = 0; // :)
-                        Console.Clear();
-                        Console.WriteLine("Mechanika\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou (a-j)\n");
-                        Console.WriteLine("a. rychlost\nb. zrychlení\nc. čas\nd. dráhu\ne. hybnost\nf. sílu\ng. výkon\nh. rychlost vody\ni. tlak\nj. hustota");
-
-                        do
-                        {
-                            localChoice = char.ToLower(Console.ReadKey().KeyChar);
-                            switch (localChoice)
-                            {
-                                case 'a'://rychlost
-                                    Console.WriteLine("\nZadejte dráhu v m");
-                                    double adraha = Convert.ToDouble(Console.ReadLine());
-                                    Console.WriteLine("Zadejte čas v s");
-                                    double acas = Convert.ToDouble(Console.ReadLine());
-                                    double vyslednaRychlost = FunkceDeleni(adraha, acas);
-                                    Console.WriteLine("\nVýsledek je {0} m.s^-1", vyslednaRychlost);
-                                    localSwitch = Solved();
-                                    break;
-                                case 'b'://zrychlení
-                                    Console.WriteLine("\nZadejte změnu rychlosti v m.s^-1");
-                                    double brychlostDelta = Convert.ToDouble(Console.ReadLine());
-                                    Console.WriteLine("Zadejte čas v s");
-                                    double bcasDelta = Convert.ToDouble(Console.ReadLine());
-                                    double vysledneZrychleni = FunkceDeleni(brychlostDelta, bcasDelta);
-                                    Console.WriteLine("\nVýsledek je {0} m.s^-2", vysledneZrychleni);
-                                    localSwitch = Solved();
-                                    break;
-                                case 'c'://čas
-                                    MechanikaCas(); //complicated enough to validate its own method
-                                    localSwitch = Solved();
-                                    break;
-                                case 'd'://dráha
-                                    Console.WriteLine("\nZadejte rychlost v m.s^-1");
-                                    double drychlost = Convert.ToDouble(Console.ReadLine());
-                                    Console.WriteLine("Zadejte čas v s");
-                                    double dcas = Convert.ToDouble(Console.ReadLine());
-                                    double vysledenaDraha = FunkceNasobeni(drychlost, dcas);
-                                    Console.WriteLine("\nVýsledek je {0} m", vysledenaDraha);
-                                    localSwitch = Solved();
-                                    break;
-                                case 'e'://hybnost
-                                    Console.WriteLine("\nZadejte hmotnost v kg");
-                                    double ehmotnost = Convert.ToDouble(Console.ReadLine());
-                                    Console.WriteLine("Zadejte rychlost v m.s^-1");
-                                    double erychlost = Convert.ToDouble(Console.ReadLine());
-                                    double vysledenaHybnost = FunkceNasobeni(erychlost,ehmotnost);
-                                    Console.WriteLine("\nVýsledek je {0} m", vysledenaHybnost);
-                                    localSwitch = Solved();
-                                    break;
-                                case 'f'://síla
-                                    Sila();
-                                    break;
-                                case 'g'://výkon
-                                    Vykon();
-                                    break;
-                                case 'h'://rychlost vody
-                                    RychlostVody();
-                                    break;
-                                case 'i'://tlak
-                                    Tlak();
-                                    break;
-                                case 'j'://hustota
-                                    Hustota();
-                                    break;
-                                default:
-                                    if (easterEgg < 8)
-                                    {
-                                        Console.WriteLine("\nMusíš vybrat jedno z výše uvedených písmen");
-                                        easterEgg++;
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("\nHele mě už to nebaví. Jestli budeš dělat kraviny tak se ukončím >:(");
-                                    }
-                                    break;
-                            }
-                        }
-                        while (localSwitch == false);
-                        Menu();
+                        Mechanika();
                         break;
-                    case '2': //molekulová fyzika a termika
-                        //MoleTermik();
+                    /*case '2': //molekulová fyzika a termika
+                        MoleTermik();
                         break;
                     case '3': //mechanické kmitání a vlnění
-                        //KmitVln();
+                        KmitVln();
                         break;
                     case '4': //elektřina a magnetismus
-                        //ElMag();
+                        ElMag();
                         break;
                     case '5':  //optika
-                        //Optika();
+                        Optika();
                         break;
                     case '6': //speciální teroie relativity
-                        //Str();
+                        Str();
                         break;
                     case '7': //fyzika mikrosvěta
-                        //Mikro();
-                        break;
+                        Mikro();
+                        break;*/
                     case '0':
                         quitSwitch = true;
                         break;
@@ -140,54 +59,101 @@ namespace consoleMAPC
             Console.ReadKey();
             return true;
         }
-        public static double FunkceNasobeni(double num1, double num2)
+        public static void FunkceNasobeni(string zadani1, string zadani2, string vyslednaVelicina)
         {
-            double vysledek;
-            vysledek = num1 * num2;
-            return vysledek;
-        }
-        public static double FunkceDeleni(double num1, double num2)
-        {
-            double vysledek;
-            vysledek = num1 / num2;
-            return vysledek;
-        }
-        public static void MechanikaCas()
-        {
-            Console.WriteLine("\nPočítáme dobu vzhledem k\na. rychlosti, nebo \nb. ke zrychlení?");
-            char vyber = char.ToLower(Console.ReadKey().KeyChar);
-            while ((vyber != 'a') && (vyber != 'b'))
-            {
-                Console.WriteLine("Prosím vyberte možnost 'a' nebo 'b'");
-                vyber = char.ToLower(Console.ReadKey().KeyChar);
-            }
-            if (vyber == 'a')
-            {
-                Console.WriteLine("Zvolili jste možnost a");
-
-                Console.WriteLine("\nZadejte dráhu v m");
-                double draha = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Zadejte rychost v m.s^-1");
-                double rychlost = Convert.ToDouble(Console.ReadLine());
-                double vysledenyCas = draha / rychlost;
-                Console.WriteLine("\nVýsledek je {0} s", vysledenyCas);
-                Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
-                Console.ReadKey();
-
-            } else
-            {
-                Console.WriteLine("Zvolili jste b");
-
-                Console.WriteLine("\nZadejte změnu rychlosti v m.s^-1");
-                double deltaRychlost = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Zadejte zrychleni v m.s^-2");
-                double zrychleni = Convert.ToDouble(Console.ReadLine());
-                double vysledenyCas = deltaRychlost / zrychleni;
-                Console.WriteLine("\nVýsledek je {0} s", vysledenyCas);
-                Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
-                Console.ReadKey();
-            }
+            Console.WriteLine("Zadejte " + zadani1);
+            double firstInput = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Zadejte " + zadani2);
+            double secondInput = Convert.ToDouble(Console.ReadLine());
+            double result = firstInput * secondInput;
+            Console.WriteLine("\nVýsledek je {0} {1}", result, vyslednaVelicina);
             
+        }
+        public static void FunkceDeleni(string zadani1, string zadani2, string vyslednaVelicina)
+        {
+            Console.WriteLine("Zadejte " + zadani1);
+            double firstInput = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Zadejte " + zadani2);
+            double secondInput = Convert.ToDouble(Console.ReadLine());
+            double result = firstInput / secondInput;
+            Console.WriteLine("\nVýsledek je {0} {1}", result, vyslednaVelicina);
+            
+        }
+        public static void Mechanika()
+        {
+            bool localSwitch = false; //same functionality as quitSwitch, just in another loop
+            char localChoice; //used to navigate submenu
+            int easterEgg = 0; // :)
+            Console.Clear();
+            Console.WriteLine("Mechanika\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou (a-j)\na. rychlost\nb. zrychlení\nc. čas\nd. dráhu\ne. hybnost\nf. sílu\ng. výkon\nh. tlak\ni. hustotu\n");
+            do
+            {
+                localChoice = char.ToLower(Console.ReadKey().KeyChar);
+                switch (localChoice)
+                {
+                    case 'a'://rychlost
+                        FunkceDeleni("dráhu v m", "čas v s", "m.s^-1");
+                        localSwitch = Solved();
+                        break;
+                    case 'b'://zrychlení
+                        FunkceDeleni("změnu rychlosti v m.s^-1", "čas v s", "m.s^-2");
+                        localSwitch = Solved();
+                        break;
+                    case 'c'://čas
+                        Console.WriteLine("\nPočítáme dobu vzhledem k\na. rychlosti, nebo \nb. ke zrychlení?");
+                        char vyber = char.ToLower(Console.ReadKey().KeyChar);
+                        while ((vyber != 'a') && (vyber != 'b'))
+                        {
+                            Console.WriteLine("Prosím vyberte možnost 'a' nebo 'b'");
+                            vyber = char.ToLower(Console.ReadKey().KeyChar);
+                        }
+                        if (vyber == 'a')
+                        {
+                            Console.WriteLine("Zvolili jste možnost a");
+                            FunkceDeleni("dráhu v m", "rychlost v m.s^-1", "s")
+                        } else
+                        {
+                            Console.WriteLine("Zvolili jste b");
+                            FunkceDeleni("změnu rychlosti v m.s^-1", "zrychlení v m.s^-2", "s")
+                            localSwitch = Solved();
+                        break;
+                    case 'd'://dráha
+                        FunkceNasobeni("rychlost v m.s^-1", "čas v s", "m");
+                        localSwitch = Solved();
+                        break;
+                    case 'e'://hybnost
+                        FunkceNasobeni("hmotnost v kg", "rychlost v m.s^-1", "kg.m.s^-1");
+                        localSwitch = Solved();
+                        break;
+                    case 'f'://síla
+                        FunkceNasobeni("hmotnost v kg", "zrychlení v m.s^-2", "N")
+                        break;
+                    case 'g'://výkon
+                        FunkceDeleni("práci v J", "dobu v s", "W")
+                        break;
+                    case 'h'://tlak
+                        FunkceDeleni("sílu v N", "plochu v m^2","Pa")
+                        break;
+                    case 'i'://hustota
+                        FunkceDeleni("hmotnost v kg", "objem v m^3", "kg.m^-3")
+                        break;
+                    default:
+                        if (easterEgg < 8)
+                        {
+                            Console.WriteLine("\nMusíš vybrat jedno z výše uvedených písmen");
+                            easterEgg++;
+                        }
+                        else
+                        {
+                            Console.WriteLine("\nHele mě už to nebaví. Jestli budeš dělat kraviny tak se ukončím >:(");
+                        }
+                        break;
+                }
+            }
+            while (localSwitch == false);
+            Menu();
         }
     }
 }
+//FOOD FOR THOUGHT
+//co kdyby každý obor měl svou funkci a pak bych měl jeden velký switch na typy příkladů, aby nemusel být switch ve switchi.
