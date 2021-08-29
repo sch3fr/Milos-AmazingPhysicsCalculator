@@ -127,15 +127,19 @@ namespace consoleMAPC
                         break;
                     case 'f'://síla
                         FunkceNasobeni("hmotnost v kg", "zrychlení v m.s^-2", "N")
+                        localSwitch = Solved();
                         break;
                     case 'g'://výkon
                         FunkceDeleni("práci v J", "dobu v s", "W")
+                        localSwitch = Solved();
                         break;
                     case 'h'://tlak
                         FunkceDeleni("sílu v N", "plochu v m^2","Pa")
+                        localSwitch = Solved();
                         break;
                     case 'i'://hustota
                         FunkceDeleni("hmotnost v kg", "objem v m^3", "kg.m^-3")
+                        localSwitch = Solved();
                         break;
                     default:
                         if (easterEgg < 8)
@@ -155,5 +159,3 @@ namespace consoleMAPC
         }
     }
 }
-//FOOD FOR THOUGHT
-//co kdyby každý obor měl svou funkci a pak bych měl jeden velký switch na typy příkladů, aby nemusel být switch ve switchi.
