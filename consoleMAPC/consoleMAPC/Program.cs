@@ -49,15 +49,9 @@ namespace consoleMAPC
         public static void Menu()
         {
             Console.Clear();
-            Console.WriteLine("Milošova kvalitní fyzikální kalkulačka <3 v 0.1");
+            Console.WriteLine("Milošova kvalitní fyzikální kalkulačka <3 v 0.1.3");
             Console.WriteLine("\nVyberte si obor, z něhož je váš příklad.");
             Console.WriteLine("\n1. Mechanika\n2. Molekulová fyzika a termika\n3. Mechanické kmitání a vlnění\n4. Elektřina a magnetismus\n5. Optika\n6. Teorie relativity\n7. Fyzika mikrosvěta\n\nZmáčkněte 0 pro ukončení programu.");
-        }
-        public static bool Solved()
-        {
-            Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
-            Console.ReadKey();
-            return true;
         }
         public static void FunkceNasobeni(string zadani1, string zadani2, string vyslednaVelicina)
         {
@@ -67,7 +61,9 @@ namespace consoleMAPC
             double secondInput = Convert.ToDouble(Console.ReadLine());
             double result = firstInput * secondInput;
             Console.WriteLine("\nVýsledek je {0} {1}", result, vyslednaVelicina);
-            
+            Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
+            Console.ReadKey();
+
         }
         public static void FunkceDeleni(string zadani1, string zadani2, string vyslednaVelicina)
         {
@@ -77,84 +73,70 @@ namespace consoleMAPC
             double secondInput = Convert.ToDouble(Console.ReadLine());
             double result = firstInput / secondInput;
             Console.WriteLine("\nVýsledek je {0} {1}", result, vyslednaVelicina);
-            
+            Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
+            Console.ReadKey();
         }
         public static void Mechanika()
         {
-            bool localSwitch = false; //same functionality as quitSwitch, just in another loop
             char localChoice; //used to navigate submenu
-            int easterEgg = 0; // :)
             Console.Clear();
             Console.WriteLine("Mechanika\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou (a-j)\na. rychlost\nb. zrychlení\nc. čas\nd. dráhu\ne. hybnost\nf. sílu\ng. výkon\nh. tlak\ni. hustotu\n");
-            do
+
+            localChoice = char.ToLower(Console.ReadKey().KeyChar);
+            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g') && (localChoice != 'h') && (localChoice != 'i'))
             {
+                Console.WriteLine("Prosím vyberte možnost a-i");
                 localChoice = char.ToLower(Console.ReadKey().KeyChar);
-                switch (localChoice)
-                {
-                    case 'a'://rychlost
-                        FunkceDeleni("dráhu v m", "čas v s", "m.s^-1");
-                        localSwitch = Solved();
-                        break;
-                    case 'b'://zrychlení
-                        FunkceDeleni("změnu rychlosti v m.s^-1", "čas v s", "m.s^-2");
-                        localSwitch = Solved();
-                        break;
-                    case 'c'://čas
-                        Console.WriteLine("\nPočítáme dobu vzhledem k\na. rychlosti, nebo \nb. ke zrychlení?");
-                        char vyber = char.ToLower(Console.ReadKey().KeyChar);
-                        while ((vyber != 'a') && (vyber != 'b'))
-                        {
-                            Console.WriteLine("Prosím vyberte možnost 'a' nebo 'b'");
-                            vyber = char.ToLower(Console.ReadKey().KeyChar);
-                        }
-                        if (vyber == 'a')
-                        {
-                            Console.WriteLine("Zvolili jste možnost a");
-                            FunkceDeleni("dráhu v m", "rychlost v m.s^-1", "s")
-                        } else
-                        {
-                            Console.WriteLine("Zvolili jste b");
-                            FunkceDeleni("změnu rychlosti v m.s^-1", "zrychlení v m.s^-2", "s")
-                            localSwitch = Solved();
-                        break;
-                    case 'd'://dráha
-                        FunkceNasobeni("rychlost v m.s^-1", "čas v s", "m");
-                        localSwitch = Solved();
-                        break;
-                    case 'e'://hybnost
-                        FunkceNasobeni("hmotnost v kg", "rychlost v m.s^-1", "kg.m.s^-1");
-                        localSwitch = Solved();
-                        break;
-                    case 'f'://síla
-                        FunkceNasobeni("hmotnost v kg", "zrychlení v m.s^-2", "N")
-                        localSwitch = Solved();
-                        break;
-                    case 'g'://výkon
-                        FunkceDeleni("práci v J", "dobu v s", "W")
-                        localSwitch = Solved();
-                        break;
-                    case 'h'://tlak
-                        FunkceDeleni("sílu v N", "plochu v m^2","Pa")
-                        localSwitch = Solved();
-                        break;
-                    case 'i'://hustota
-                        FunkceDeleni("hmotnost v kg", "objem v m^3", "kg.m^-3")
-                        localSwitch = Solved();
-                        break;
-                    default:
-                        if (easterEgg < 8)
-                        {
-                            Console.WriteLine("\nMusíš vybrat jedno z výše uvedených písmen");
-                            easterEgg++;
-                        }
-                        else
-                        {
-                            Console.WriteLine("\nHele mě už to nebaví. Jestli budeš dělat kraviny tak se ukončím >:(");
-                        }
-                        break;
-                }
             }
-            while (localSwitch == false);
+            switch (localChoice)
+            {
+                case 'a'://rychlost
+                    FunkceDeleni("dráhu v m", "čas v s", "m.s^-1");
+                    break;
+                case 'b'://zrychlení
+                    FunkceDeleni("změnu rychlosti v m.s^-1", "čas v s", "m.s^-2");
+                    break;
+                case 'c'://čas
+                    Console.WriteLine("\nPočítáme dobu vzhledem k\na. rychlosti, nebo \nb. ke zrychlení?");
+                    char vyber = char.ToLower(Console.ReadKey().KeyChar);
+                    while ((vyber != 'a') && (vyber != 'b'))
+                    {
+                        Console.WriteLine("Prosím vyberte možnost 'a' nebo 'b'");
+                        vyber = char.ToLower(Console.ReadKey().KeyChar);
+                    }
+                    if (vyber == 'a')
+                    {
+                        Console.WriteLine("Zvolili jste možnost a");
+                        FunkceDeleni("dráhu v m", "rychlost v m.s^-1", "s");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Zvolili jste b");
+                        FunkceDeleni("změnu rychlosti v m.s^-1", "zrychlení v m.s^-2", "s");
+                    }
+                    break;
+                case 'd'://dráha
+                    FunkceNasobeni("rychlost v m.s^-1", "čas v s", "m");
+                    break;
+                case 'e'://hybnost
+                    FunkceNasobeni("hmotnost v kg", "rychlost v m.s^-1", "kg.m.s^-1");
+                    break;
+                case 'f'://síla
+                    FunkceNasobeni("hmotnost v kg", "zrychlení v m.s^-2", "N");
+                    break;
+                case 'g'://výkon
+                    FunkceDeleni("práci v J", "dobu v s", "W");
+                    break;
+                case 'h'://tlak
+                    FunkceDeleni("sílu v N", "plochu v m^2", "Pa");
+                    break;
+                case 'i'://hustota
+                    FunkceDeleni("hmotnost v kg", "objem v m^3", "kg.m^-3");
+                    break;
+                default:
+                    Console.WriteLine("You weren't supposed to be able to get here you know");
+                    break;
+                }
             Menu();
         }
     }
