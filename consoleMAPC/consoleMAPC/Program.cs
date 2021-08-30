@@ -18,10 +18,10 @@ namespace consoleMAPC
                     case '1': //mechanika
                         Mechanika();
                         break;
-                    /*case '2': //molekulová fyzika a termika
+                    case '2': //molekulová fyzika a termika
                         MoleTermik();
                         break;
-                    case '3': //mechanické kmitání a vlnění
+                    /*case '3': //mechanické kmitání a vlnění
                         KmitVln();
                         break;
                     case '4': //elektřina a magnetismus
@@ -138,6 +138,27 @@ namespace consoleMAPC
                     break;
                 }
             Menu();
+        }
+        public static void MoleTermik()
+        {
+            char localChoice; //used to navigate submenu
+            Console.Clear();
+            Console.WriteLine("Co počítáme?");
+            localChoice = char.ToLower(Console.ReadKey().KeyChar);
+            while (localChoice != 'a')
+            {
+                Console.WriteLine("Prosím vyberte možnost a-i");
+                localChoice = char.ToLower(Console.ReadKey().KeyChar);
+            }
+            switch (localChoice)
+            {
+                case 'a':
+                    //something
+                    break;
+                default:
+                    Console.WriteLine("You weren't supposed to be able to get here you know");
+                    break;
+            }
         }
     }
 }
