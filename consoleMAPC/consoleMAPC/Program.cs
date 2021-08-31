@@ -21,7 +21,7 @@ namespace consoleMAPC
                     case '2': //molekulová fyzika a termika
                         MoleTermik();
                         break;
-                    /*case '3': //mechanické kmitání a vlnění
+                    case '3': //mechanické kmitání a vlnění
                         KmitVln();
                         break;
                     case '4': //elektřina a magnetismus
@@ -35,7 +35,7 @@ namespace consoleMAPC
                         break;
                     case '7': //fyzika mikrosvěta
                         Mikro();
-                        break;*/
+                        break;
                     case '0':
                         quitSwitch = true;
                         break;
@@ -49,7 +49,7 @@ namespace consoleMAPC
         public static void Menu()
         {
             Console.Clear();
-            Console.WriteLine("Milošova kvalitní fyzikální kalkulačka <3 v 0.1.3");
+            Console.WriteLine("Milošova kvalitní fyzikální kalkulačka <3 v 0.2.0");
             Console.WriteLine("\nVyberte si obor, z něhož je váš příklad.");
             Console.WriteLine("\n1. Mechanika\n2. Molekulová fyzika a termika\n3. Mechanické kmitání a vlnění\n4. Elektřina a magnetismus\n5. Optika\n6. Teorie relativity\n7. Fyzika mikrosvěta\n\nZmáčkněte 0 pro ukončení programu.");
         }
@@ -140,6 +140,111 @@ namespace consoleMAPC
             Menu();
         }
         public static void MoleTermik()
+        {
+            char localChoice; //used to navigate submenu
+            Console.Clear();
+            Console.WriteLine("Molekulová fyzika a termika.\n\nCo počítáme?");
+            localChoice = char.ToLower(Console.ReadKey().KeyChar);
+            while (localChoice != 'a')
+            {
+                Console.WriteLine("Prosím vyberte možnost a-i");
+                localChoice = char.ToLower(Console.ReadKey().KeyChar);
+            }
+            switch (localChoice)
+            {
+                case 'a':
+                    //something
+                    break;
+                default:
+                    Console.WriteLine("You weren't supposed to be able to get here you know");
+                    break;
+            }
+        }
+        public static void KmitVln()
+        {
+            char localChoice; //used to navigate submenu
+            Console.Clear();
+            Console.WriteLine("Co počítáme?");
+            localChoice = char.ToLower(Console.ReadKey().KeyChar);
+            while (localChoice != 'a')
+            {
+                Console.WriteLine("Prosím vyberte možnost a-i");
+                localChoice = char.ToLower(Console.ReadKey().KeyChar);
+            }
+            switch (localChoice)
+            {
+                case 'a':
+                    //something
+                    break;
+                default:
+                    Console.WriteLine("You weren't supposed to be able to get here you know");
+                    break;
+            }
+        }
+        public static void ElMag()
+        {
+            char localChoice; //used to navigate submenu
+            Console.Clear();
+            Console.WriteLine("Co počítáme?");
+            localChoice = char.ToLower(Console.ReadKey().KeyChar);
+            while (localChoice != 'a')
+            {
+                Console.WriteLine("Prosím vyberte možnost a-i");
+                localChoice = char.ToLower(Console.ReadKey().KeyChar);
+            }
+            switch (localChoice)
+            {
+                case 'a':
+                    //something
+                    break;
+                default:
+                    Console.WriteLine("You weren't supposed to be able to get here you know");
+                    break;
+            }
+        }
+        public static void Optika()
+        {
+            char localChoice; //used to navigate submenu
+            Console.Clear();
+            Console.WriteLine("Co počítáme?");
+            localChoice = char.ToLower(Console.ReadKey().KeyChar);
+            while (localChoice != 'a')
+            {
+                Console.WriteLine("Prosím vyberte možnost a-i");
+                localChoice = char.ToLower(Console.ReadKey().KeyChar);
+            }
+            switch (localChoice)
+            {
+                case 'a':
+                    //something
+                    break;
+                default:
+                    Console.WriteLine("You weren't supposed to be able to get here you know");
+                    break;
+            }
+        }
+        public static void STR()
+        {
+            char localChoice; //used to navigate submenu
+            Console.Clear();
+            Console.WriteLine("Co počítáme?");
+            localChoice = char.ToLower(Console.ReadKey().KeyChar);
+            while (localChoice != 'a')
+            {
+                Console.WriteLine("Prosím vyberte možnost a-i");
+                localChoice = char.ToLower(Console.ReadKey().KeyChar);
+            }
+            switch (localChoice)
+            {
+                case 'a':
+                    //something
+                    break;
+                default:
+                    Console.WriteLine("You weren't supposed to be able to get here you know");
+                    break;
+            }
+        }
+        public static void Mikro()
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
