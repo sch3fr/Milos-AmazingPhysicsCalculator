@@ -143,7 +143,7 @@ namespace consoleMAPC
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Molekulová fyzika a termika.\n\nCo počítáme?");
+            Console.WriteLine("Molekulová fyzika a termika.\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou.\na. První termodynamický zákon\nb. kinetickou enegii\nc. potenciální energii\n");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
             while (localChoice != 'a')
             {
@@ -164,7 +164,7 @@ namespace consoleMAPC
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Co počítáme?");
+            Console.WriteLine("Mwchanické kmitání a vlnění.\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou.\na. amplitudu výchylky\nb. periodu\nc. počáteční fázi kmitání\nd. doba amplitudy\ne. okamžitou výchylku\nf. frekvenci\ng. délku kyvadla");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
             while (localChoice != 'a')
             {
@@ -173,7 +173,25 @@ namespace consoleMAPC
             }
             switch (localChoice)
             {
-                case 'a':
+                case 'a'://amplituda výchylky
+                    //something
+                    break;
+                case 'b'://perioda
+                    //something
+                    break;
+                case 'c'://počáteční fáze
+                    //something
+                    break;
+                case 'd'://doba amplitudy
+                    //something
+                    break;
+                case 'e'://okamžitá výchylka
+                    //something
+                    break;
+                case 'f'://frekvence
+                    //something
+                    break;
+                case 'g'://dlélka kyvadla
                     //something
                     break;
                 default:
@@ -223,7 +241,7 @@ namespace consoleMAPC
                     break;
             }
         }
-        public static void STR()
+        public static void Str()
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
