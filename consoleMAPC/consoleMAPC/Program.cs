@@ -4,7 +4,9 @@ namespace consoleMAPC
 {
     class Program
     {
-        static void Main(string[] args)//TODO převodník jednotek
+        static void Main(string[] args)
+            //TODO převodník jednotek
+            //     delete default switch cases
         {
             bool quitSwitch = false; //makes the do-while loop run, thus letting user choose again and agian
             char choice; //used to navigate menu
@@ -76,7 +78,7 @@ namespace consoleMAPC
             Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
             Console.ReadKey();
         }
-        public static void Mechanika()
+        public static void Mechanika() //DONE
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
@@ -136,7 +138,7 @@ namespace consoleMAPC
                 default:
                     Console.WriteLine("You weren't supposed to be able to get here you know");
                     break;
-                }
+            }
             Menu();
         }
         public static void MoleTermik()
@@ -164,7 +166,7 @@ namespace consoleMAPC
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Mwchanické kmitání a vlnění.\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou.\na. amplitudu výchylky\nb. periodu\nc. počáteční fázi kmitání\nd. doba amplitudy\ne. okamžitou výchylku\nf. frekvenci\ng. délku kyvadla");
+            Console.WriteLine("Mechanické kmitání a vlnění.\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou.\na. amplitudu výchylky\nb. periodu\nc. počáteční fázi kmitání\nd. doba amplitudy\ne. okamžitou výchylku\nf. frekvenci\ng. délku kyvadla");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
             while (localChoice != 'a')
             {
@@ -199,11 +201,11 @@ namespace consoleMAPC
                     break;
             }
         }
-        public static void ElMag()
+        public static void ElMag()//TODO sloučit: napětí na rezistorech + proudy na větvích
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Co počítáme?");
+            Console.WriteLine("Co počítáme?\n\na. přitažlivou sílu nábojů\nb. intenzitu elektrického pole\nc. napěté mezi dvěma daskami\nd. kapacitu kondenzátoru\ne. uvolnění energie\nf. proud nabití kondenzátoru\ng. intenzitu el. pole ve vodiči\nh. napětí na rezistorech\ni. ");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
             while (localChoice != 'a')
             {
