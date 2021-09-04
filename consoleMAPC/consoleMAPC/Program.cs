@@ -135,9 +135,6 @@ namespace consoleMAPC
                 case 'i'://hustota
                     FunkceDeleni("hmotnost v kg", "objem v m^3", "kg.m^-3");
                     break;
-                default:
-                    Console.WriteLine("You weren't supposed to be able to get here you know");
-                    break;
             }
             Menu();
         }
@@ -154,12 +151,16 @@ namespace consoleMAPC
             }
             switch (localChoice)
             {
-                case 'a':
+                case 'a': //první termodynamický zákon
                     //something
                     break;
-                default:
-                    Console.WriteLine("You weren't supposed to be able to get here you know");
+                case 'b'://kinetická energie
+                    //smth
                     break;
+                case 'c'://potenciální energie
+                    //smth
+                    break;
+                
             }
         }
         public static void KmitVln()
@@ -196,16 +197,13 @@ namespace consoleMAPC
                 case 'g'://dlélka kyvadla
                     //something
                     break;
-                default:
-                    Console.WriteLine("You weren't supposed to be able to get here you know");
-                    break;
             }
         }
         public static void ElMag()//TODO sloučit: napětí na rezistorech + proudy na větvích
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Co počítáme?\n\na. přitažlivou sílu nábojů\nb. intenzitu elektrického pole\nc. napěté mezi dvěma daskami\nd. kapacitu kondenzátoru\ne. uvolnění energie\nf. proud nabití kondenzátoru\ng. intenzitu el. pole ve vodiči\nh. napětí na rezistorech\ni. ");
+            Console.WriteLine("Co počítáme?\n\na. přitažlivou sílu nábojů\nb. intenzitu elektrického pole\nc. napětí mezi dvěma daskami\nd. kapacitu kondenzátoru\ne. uvolnění energie\nf. proud nabití kondenzátoru\ng. napětí na rezistorech\n");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
             while (localChoice != 'a')
             {
@@ -214,11 +212,26 @@ namespace consoleMAPC
             }
             switch (localChoice)
             {
-                case 'a':
+                case 'a'://přitažlivá síla nábojů
                     //something
                     break;
-                default:
-                    Console.WriteLine("You weren't supposed to be able to get here you know");
+                case 'b'://intenzita elektrického pole
+                    //something
+                    break;
+                case 'c'://napětí mezi dvěma náboji
+                    //smth
+                    break;
+                case 'd'://kapacita kondenzátoru
+                    //smth
+                    break;
+                case 'e'://uvolnění energie
+                    //smth
+                    break;
+                case 'f'://proud nabití kondenzátoru
+                    //smth
+                    break;
+                case 'g'://napětí na rezistorech a proudy na větvích obvodu
+                    //smth
                     break;
             }
         }
