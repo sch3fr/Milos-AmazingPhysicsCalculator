@@ -160,7 +160,30 @@ namespace consoleMAPC
                 case 'c'://potenciální energie
                     //smth
                     break;
-                
+                case 'd'://teplota soustavy po dosažení rovnovážného stavu
+                    //smth
+                    break;
+                case 'e'://tlak plynu
+                    //smth
+                    break;
+                case 'f'://objem plynu + změna oběmu plynu
+                    //smth
+                    break;
+                case 'g'://vztah teploty a tlaku
+                    //smth
+                    break;
+                case 'h'://teplotní roztařnost
+                    //smth
+                    break;
+                case 'i'://deformační síla
+                    //smth
+                    break;
+                case 'j'://průměr akpiláry
+                    //smth
+                    break;
+                case 'k'://předání tepla
+                    //smth
+                    break;                
             }
         }
         public static void KmitVln()
