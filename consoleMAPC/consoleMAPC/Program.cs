@@ -177,7 +177,10 @@ namespace consoleMAPC
             switch (localChoice)
             {
                 case 'a'://amplituda výchylky
-                    //something
+                    Console.WriteLine("Zadejte okamžitou výchylku");
+                    double vychylka = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Zadajte čas");
+                    double cas = Convert.ToDouble(Console.ReadLine());
                     break;
                 case 'b'://perioda
                     //something
