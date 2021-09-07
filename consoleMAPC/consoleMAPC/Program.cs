@@ -242,7 +242,7 @@ namespace consoleMAPC
                     //something
                     break;
                 case 'b'://intenzita elektrického pole
-                    //something
+                    FunkceDeleni("elektrickou sílu", "elektrický náboj", "N.C^-1");
                     break;
                 case 'c'://napětí mezi dvěma náboji
                     //smth
