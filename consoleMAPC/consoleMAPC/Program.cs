@@ -233,7 +233,7 @@ namespace consoleMAPC
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
             while (localChoice != 'a')
             {
-                Console.WriteLine("Prosím vyberte možnost a-i");
+                Console.WriteLine("Prosím vyberte možnost a-h");
                 localChoice = char.ToLower(Console.ReadKey().KeyChar);
             }
             switch (localChoice)
@@ -289,20 +289,21 @@ namespace consoleMAPC
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Co počítáme?");
+            Console.WriteLine("Speciální teorie relativity\nCo počítáme?\na. dilataci času\nb.kontrakci délek");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
             while (localChoice != 'a')
             {
-                Console.WriteLine("Prosím vyberte možnost a-i");
+                Console.WriteLine("Prosím vyberte možnost a-b");
                 localChoice = char.ToLower(Console.ReadKey().KeyChar);
             }
             switch (localChoice)
             {
                 case 'a':
-                    //something
+                    //dilatace času
                     break;
-                default:
-                    Console.WriteLine("You weren't supposed to be able to get here you know");
+                case 'b':
+                    //kontrakce délek
+                    //l=(l▼0)*sqrt(1-(v^2/c^2))
                     break;
             }
         }
