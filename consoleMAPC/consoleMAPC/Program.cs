@@ -304,6 +304,12 @@ namespace consoleMAPC
                 case 'b':
                     //kontrakce délek
                     //l=(l▼0)*sqrt(1-(v^2/c^2))
+                    Console.WriteLine("Zadejte klidovou délku v m");
+                    double delkaKlid = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Zadejte rychost v km.s^-1")
+                    double kontrakceRychlosst = Convert.ToDouble(Console.ReadLine());
+                    double kontrakceVysledek = delkaKlid*sqrt(1-((delkaKlid*delkaKlid)/300000));
+                    Console-WriteLine("Výsledná délka je {0} m.",kontrakceVysledek);
                     break;
             }
         }
