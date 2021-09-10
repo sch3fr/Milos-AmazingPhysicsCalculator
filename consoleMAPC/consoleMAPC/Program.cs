@@ -300,16 +300,41 @@ namespace consoleMAPC
             {
                 case 'a':
                     //dilatace času
+                    Console.WriteLine("Počítáme čas a.) v klidové soustavě, nebo b.) v soustavě, která se pohybuje\nVyberte možnost 'a' nebo 'b'");
+                    char dilataceChoice = char.ToLower(Console.ReadKey().KeyChar);
+                    if (dilataceChoice = 'a')
+                    {
+                        Console.WriteLine("Zadejte dobu trvání události (v sekundách) v soustavě pohybující se rychlostí v");
+                        double dilDob1 = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Zadejte rychlost pohybu soustavy v km.s^-1");
+                        double dilRych = Convert.ToDouble(Console.ReadLine());
+                        double dilVysledek = dilDob1/(sqrt(1-((dilRych*dilRych)/300000)));
+                        Console-WriteLine("Výsledná doba je {0} s.",dilVysledek);
+                        Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
+                        Console.ReadKey();
+                    }
+                    else if (dilataceChoice = 'b')
+                    {
+                        Console.WriteLine("Zadejte dobu trvání události (v sekundách) ve klidové soustavě");
+                        double dilDob2 = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Zadejte rychlost pohybu soustavy v km.s^-1");
+                        double dilRych = Convert.ToDouble(Console.ReadLine());
+                        double dilVysledek = (sqrt(1-((dilRych*dilRych)/300000)))/dilDob2;
+                        Console-WriteLine("Výsledná doba je {0} s.",dilVysledek);
+                        Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
+                        Console.ReadKey();
+                    }
+                    else {Console.WriteLine("Zvolte A nebo B");}
                     break;
-                case 'b':
-                    //kontrakce délek
-                    //l=(l▼0)*sqrt(1-(v^2/c^2))
+                case 'b'://kontrakce délek
                     Console.WriteLine("Zadejte klidovou délku v m");
                     double delkaKlid = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Zadejte rychost v km.s^-1")
+                    Console.WriteLine("Zadejte rychost v km.s^-1");
                     double kontrakceRychlosst = Convert.ToDouble(Console.ReadLine());
                     double kontrakceVysledek = delkaKlid*sqrt(1-((delkaKlid*delkaKlid)/300000));
                     Console-WriteLine("Výsledná délka je {0} m.",kontrakceVysledek);
+                    Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
+                    Console.ReadKey();
                     break;
             }
         }
