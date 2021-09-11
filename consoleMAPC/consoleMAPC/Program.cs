@@ -268,7 +268,7 @@ namespace consoleMAPC
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Co počítáme?");
+            Console.WriteLine("Optika\nCo počítáme?\na. barvu skvrny v odraženém bílém světle\nb. vlnovou délku světla\nc. vzdálenost předmětu od zrcadle\nd. zvětšení obrazu v zakřiveném zrcadle\n");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
             while (localChoice != 'a')
             {
@@ -278,10 +278,16 @@ namespace consoleMAPC
             switch (localChoice)
             {
                 case 'a':
-                    //something
+                    //barva skvrny
                     break;
-                default:
-                    Console.WriteLine("You weren't supposed to be able to get here you know");
+                case 'b':
+                    //vlnová délka světla
+                    break;
+                case 'c':
+                    //vzdálenost předmětu od zrcadla
+                    break;
+                case 'd':
+                    //zvětšení obrazu v zakřiveném zrcadle
                     break;
             }
         }
