@@ -330,8 +330,8 @@ namespace consoleMAPC
                     Console.WriteLine("Zadejte klidovou délku v m");
                     double delkaKlid = Convert.ToDouble(Console.ReadLine());
                     Console.WriteLine("Zadejte rychost v km.s^-1");
-                    double kontrakceRychlosst = Convert.ToDouble(Console.ReadLine());
-                    double kontrakceVysledek = delkaKlid*sqrt(1-((delkaKlid*delkaKlid)/300000));
+                    double kontrakceRychlost = Convert.ToDouble(Console.ReadLine());
+                    double kontrakceVysledek = delkaKlid*sqrt(1-((kontrakceRychlost*kontrakceRychlost)/300000));
                     Console-WriteLine("Výsledná délka je {0} m.",kontrakceVysledek);
                     Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
                     Console.ReadKey();
@@ -342,7 +342,7 @@ namespace consoleMAPC
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Co počítáme?");
+            Console.WriteLine("Fyzika mikrosvěta\nCo počítáme?\na. délku de Broglieovy vlny\nb. energii fotonů\nc. hybnost fotonů\nd. energii vyletujících elektronů\n");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
             while (localChoice != 'a')
             {
@@ -352,10 +352,16 @@ namespace consoleMAPC
             switch (localChoice)
             {
                 case 'a':
-                    //something
+                    //de Broglieova vlna
                     break;
-                default:
-                    Console.WriteLine("You weren't supposed to be able to get here you know");
+                case 'b':
+                    //energie fotonů
+                    break;
+                case 'c':
+                    //hybnost fotonů
+                    break;
+                case 'd':
+                    //energie vyletujících fotonů
                     break;
             }
         }
