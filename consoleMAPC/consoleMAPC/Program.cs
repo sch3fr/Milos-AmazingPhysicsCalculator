@@ -370,8 +370,13 @@ namespace consoleMAPC
                     Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
                     Console.ReadKey();
                     break;
-                case 'c':
-                    //hybnost fotonů
+                case 'c'://hybnost fotonů
+                    Console.WriteLine("Zadejte energii v J.");
+                    double energFoton = Convert.ToDouble(Console.ReadLine());
+                    double energFotonVys = energFoton/300000;
+                    Console-WriteLine("Výsledná hybnost je {0} kg.m.s^-1.",energFotonVys);
+                    Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
+                    Console.ReadKey();
                     break;
                 case 'd':
                     //energie vyletujících fotonů
