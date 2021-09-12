@@ -178,7 +178,7 @@ namespace consoleMAPC
                 case 'i'://deformační síla
                     //smth
                     break;
-                case 'j'://průměr akpiláry
+                case 'j'://průměr kapiláry
                     //smth
                     break;
                 case 'k'://předání tepla
@@ -291,7 +291,7 @@ namespace consoleMAPC
                     break;
             }
         }
-        public static void Str()
+        public static void Str() //DONE
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
@@ -346,6 +346,8 @@ namespace consoleMAPC
         }
         public static void Mikro()
         {
+            double planckKonst = Math.Pow(10, -34)
+            
             char localChoice; //used to navigate submenu
             Console.Clear();
             Console.WriteLine("Fyzika mikrosvěta\nCo počítáme?\na. délku de Broglieovy vlny\nb. energii fotonů\nc. hybnost fotonů\nd. energii vyletujících elektronů\n");
@@ -360,8 +362,13 @@ namespace consoleMAPC
                 case 'a':
                     //de Broglieova vlna
                     break;
-                case 'b':
-                    //energie fotonů
+                case 'b'://energie fotonů
+                    Console.WriteLine("Zadejte frekvenci v Hz.");
+                    double frekFoton = Convert.ToDouble(Console.ReadLine());
+                    double frekFotonVys = frekFoton*(6,62607015*planckKonst);
+                    Console-WriteLine("Výsledná energie je {0} J.",frekFotonVys);
+                    Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
+                    Console.ReadKey();
                     break;
                 case 'c':
                     //hybnost fotonů
