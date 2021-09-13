@@ -78,6 +78,7 @@ namespace consoleMAPC
             Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
             Console.ReadKey();
         }
+        //public static void FunkceDeleniKonst
         public static void Mechanika() //DONE
         {
             char localChoice; //used to navigate submenu
@@ -280,8 +281,12 @@ namespace consoleMAPC
                 case 'a':
                     //barva skvrny
                     break;
-                case 'b':
-                    //vlnová délka světla
+                case 'b'://vlnová délka světla
+                    Console.WriteLine("Zadejte frekvenci světla v Hz");
+                    double svetloFrek = Convert.ToDouble(Console.ReadLine());
+                    double svetloFrekVysl = 300000/svetloFrek;
+                    Console.WriteLine("Výsledek je {0} nm.\n Stiskem jakékoliv klávesy se vrátítte do hlavního menu", svetloFrekVysl);
+                    Console.ReadKey();
                     break;
                 case 'c':
                     //vzdálenost předmětu od zrcadla
