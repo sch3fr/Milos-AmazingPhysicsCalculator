@@ -7,6 +7,7 @@ namespace consoleMAPC
         static void Main(string[] args)
             //TODO převodník jednotek
             //     delete default switch cases
+            //     JAKOU HODNOTU MÁ PLANCKOVA KONSTANTA???
         {
             bool quitSwitch = false; //makes the do-while loop run, thus letting user choose again and agian
             char choice; //used to navigate menu
@@ -313,25 +314,25 @@ namespace consoleMAPC
                     //dilatace času
                     Console.WriteLine("Počítáme čas a.) v klidové soustavě, nebo b.) v soustavě, která se pohybuje\nVyberte možnost 'a' nebo 'b'");
                     char dilataceChoice = char.ToLower(Console.ReadKey().KeyChar);
-                    if (dilataceChoice = 'a')
+                    if (dilataceChoice == 'a')
                     {
                         Console.WriteLine("Zadejte dobu trvání události (v sekundách) v soustavě pohybující se rychlostí v");
                         double dilDob1 = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("Zadejte rychlost pohybu soustavy v km.s^-1");
                         double dilRych = Convert.ToDouble(Console.ReadLine());
                         double dilVysledek = dilDob1/(sqrt(1-((dilRych*dilRych)/300000)));
-                        Console-WriteLine("Výsledná doba je {0} s.",dilVysledek);
+                        Console.WriteLine("Výsledná doba je {0} s.",dilVysledek);
                         Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
                         Console.ReadKey();
                     }
-                    else if (dilataceChoice = 'b')
+                    else if (dilataceChoice == 'b')
                     {
                         Console.WriteLine("Zadejte dobu trvání události (v sekundách) ve klidové soustavě");
                         double dilDob2 = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("Zadejte rychlost pohybu soustavy v km.s^-1");
                         double dilRych = Convert.ToDouble(Console.ReadLine());
                         double dilVysledek = (sqrt(1-((dilRych*dilRych)/300000)))/dilDob2;
-                        Console-WriteLine("Výsledná doba je {0} s.",dilVysledek);
+                        Console.WriteLine("Výsledná doba je {0} s.",dilVysledek);
                         Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
                         Console.ReadKey();
                     }
@@ -343,7 +344,7 @@ namespace consoleMAPC
                     Console.WriteLine("Zadejte rychost v km.s^-1");
                     double kontrakceRychlost = Convert.ToDouble(Console.ReadLine());
                     double kontrakceVysledek = delkaKlid*sqrt(1-((kontrakceRychlost*kontrakceRychlost)/300000));
-                    Console-WriteLine("Výsledná délka je {0} m.",kontrakceVysledek);
+                    Console.WriteLine("Výsledná délka je {0} m.",kontrakceVysledek);
                     Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
                     Console.ReadKey();
                     break;
@@ -351,7 +352,7 @@ namespace consoleMAPC
         }
         public static void Mikro()
         {
-            double planckKonst = Math.Pow(10, -34)
+            double planckKonst = Math.Pow(10, -34);
             
             char localChoice; //used to navigate submenu
             Console.Clear();
@@ -388,7 +389,7 @@ namespace consoleMAPC
                     double energFoton2 = Convert.ToDouble(Console.ReadLine());
                     Console.WriteLine("Zadejte výstupní práci elektronů v eV");
                     double vystupniPrace = Convert.ToDouble(Console.ReadLine());
-                    Console,WriteLine("Zadejte vlnovou délku v nm");
+                    Console.WriteLine("Zadejte vlnovou délku v nm");
                     double vlnDelka = Convert.ToDouble(Console.ReadKey());
                     double vysledEnergie = ((((planckKonst*6,62607015)*300000)/vlnDelka)-vystupniPrace);
                     Console.WriteLine("Výsledná energie je {0} ev.",vysledEnergie);
