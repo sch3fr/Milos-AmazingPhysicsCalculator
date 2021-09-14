@@ -371,7 +371,7 @@ namespace consoleMAPC
                     Console.WriteLine("Zadejte frekvenci v Hz.");
                     double frekFoton = Convert.ToDouble(Console.ReadLine());
                     double frekFotonVys = frekFoton*(6,62607015*planckKonst);
-                    Console-WriteLine("Výsledná energie je {0} J.",frekFotonVys);
+                    Console.WriteLine("Výsledná energie je {0} eV.",frekFotonVys);
                     Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
                     Console.ReadKey();
                     break;
@@ -379,12 +379,21 @@ namespace consoleMAPC
                     Console.WriteLine("Zadejte energii v J.");
                     double energFoton = Convert.ToDouble(Console.ReadLine());
                     double energFotonVys = energFoton/300000;
-                    Console-WriteLine("Výsledná hybnost je {0} kg.m.s^-1.",energFotonVys);
+                    Console.WriteLine("Výsledná hybnost je {0} kg.m.s^-1.",energFotonVys);
                     Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
                     Console.ReadKey();
                     break;
-                case 'd':
-                    //energie vyletujících fotonů
+                case 'd'://energie vyletujících fotonů
+                    Console.WriteLine("Zadejte frekvenci v Hz");
+                    double energFoton2 = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Zadejte výstupní práci elektronů v eV");
+                    double vystupniPrace = Convert.ToDouble(Console.ReadLine());
+                    Console,WriteLine("Zadejte vlnovou délku v nm");
+                    double vlnDelka = Convert.ToDouble(Console.ReadKey());
+                    double vysledEnergie = ((((planckKonst*6,62607015)*300000)/vlnDelka)-vystupniPrace);
+                    Console.WriteLine("Výsledná energie je {0} ev.",vysledEnergie);
+                    Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
+                    Console.ReadKey();
                     break;
             }
         }
