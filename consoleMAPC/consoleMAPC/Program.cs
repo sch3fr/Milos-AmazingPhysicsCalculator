@@ -320,7 +320,7 @@ namespace consoleMAPC
                         double dilDob1 = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("Zadejte rychlost pohybu soustavy v km.s^-1");
                         double dilRych = Convert.ToDouble(Console.ReadLine());
-                        double dilVysledek = dilDob1/(sqrt(1-((dilRych*dilRych)/300000)));
+                        double dilVysledek = dilDob1/(Math.Sqrt(1-((dilRych*dilRych)/300000)));
                         Console.WriteLine("Výsledná doba je {0} s.",dilVysledek);
                         Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
                         Console.ReadKey();
@@ -331,7 +331,7 @@ namespace consoleMAPC
                         double dilDob2 = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("Zadejte rychlost pohybu soustavy v km.s^-1");
                         double dilRych = Convert.ToDouble(Console.ReadLine());
-                        double dilVysledek = (sqrt(1-((dilRych*dilRych)/300000)))/dilDob2;
+                        double dilVysledek = (Math.Sqrt(1-((dilRych*dilRych)/300000)))/dilDob2;
                         Console.WriteLine("Výsledná doba je {0} s.",dilVysledek);
                         Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
                         Console.ReadKey();
@@ -343,7 +343,7 @@ namespace consoleMAPC
                     double delkaKlid = Convert.ToDouble(Console.ReadLine());
                     Console.WriteLine("Zadejte rychost v km.s^-1");
                     double kontrakceRychlost = Convert.ToDouble(Console.ReadLine());
-                    double kontrakceVysledek = delkaKlid*sqrt(1-((kontrakceRychlost*kontrakceRychlost)/300000));
+                    double kontrakceVysledek = delkaKlid*Math.Sqrt(1-((kontrakceRychlost*kontrakceRychlost)/300000));
                     Console.WriteLine("Výsledná délka je {0} m.",kontrakceVysledek);
                     Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
                     Console.ReadKey();
@@ -352,8 +352,10 @@ namespace consoleMAPC
         }
         public static void Mikro()
         {
-            double planckKonst = Math.Pow(10, -34);
-            
+            double planckKonst1 = Math.Pow(10, -34);
+            double planckKonst2 = 6.62607015;
+
+
             char localChoice; //used to navigate submenu
             Console.Clear();
             Console.WriteLine("Fyzika mikrosvěta\nCo počítáme?\na. délku de Broglieovy vlny\nb. energii fotonů\nc. hybnost fotonů\nd. energii vyletujících elektronů\n");
@@ -371,7 +373,7 @@ namespace consoleMAPC
                 case 'b'://energie fotonů
                     Console.WriteLine("Zadejte frekvenci v Hz.");
                     double frekFoton = Convert.ToDouble(Console.ReadLine());
-                    double frekFotonVys = frekFoton*(6,62607015*planckKonst);
+                    double frekFotonVys = frekFoton*(planckKonst1*planckKonst2);
                     Console.WriteLine("Výsledná energie je {0} eV.",frekFotonVys);
                     Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
                     Console.ReadKey();
@@ -391,7 +393,7 @@ namespace consoleMAPC
                     double vystupniPrace = Convert.ToDouble(Console.ReadLine());
                     Console.WriteLine("Zadejte vlnovou délku v nm");
                     double vlnDelka = Convert.ToDouble(Console.ReadKey());
-                    double vysledEnergie = ((((planckKonst*6,62607015)*300000)/vlnDelka)-vystupniPrace);
+                    double vysledEnergie = ((((planckKonst1*planckKonst2)*300000)/vlnDelka)-vystupniPrace);
                     Console.WriteLine("Výsledná energie je {0} ev.",vysledEnergie);
                     Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
                     Console.ReadKey();
