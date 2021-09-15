@@ -250,7 +250,15 @@ namespace consoleMAPC
                     //smth
                     break;
                 case 'd'://kapacita kondenzátoru
-                    //smth
+                    Console.WriteLine("Zadejte vzdálenost desek v m");
+                    double vzdalenostDesek = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Zadejte plochu desek v m^2");
+                    double plochaDesek = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Zadejte relativní permitivitu");
+                    double relativniPermitivita = Convert.ToDouble(Console.ReadLine());
+                    double vyslednaKapacita = (8,85*10^-12)*(plochaDesek(vzdalenostDesek));
+                    Console.WriteLine("Výsledná kapacita deskového kondenzátoru je {0} F.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu.", vyslednaKapacita);
+                    Console:ReadKey();
                     break;
                 case 'e'://uvolnění energie
                     //smth
