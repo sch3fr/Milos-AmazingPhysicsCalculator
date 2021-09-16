@@ -192,7 +192,7 @@ namespace consoleMAPC
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Mechanické kmitání a vlnění.\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou.\na. amplitudu výchylky\nb. periodu\nc. počáteční fázi kmitání\nd. doba amplitudy\ne. okamžitou výchylku\nf. frekvenci\ng. délku kyvadla");
+            Console.WriteLine("Mechanické kmitání a vlnění.\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou.\na. amplitudu výchylky\nb. periodu\nc. počáteční fázi kmitání\nd. doba amplitudy\ne. okamžitou výchylku\nf. frekvenci harmonického tónu\ng. délku kyvadla");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
             while (localChoice != 'a')
             {
@@ -219,7 +219,15 @@ namespace consoleMAPC
                 case 'e'://okamžitá výchylka
                     //something
                     break;
-                case 'f'://frekvence
+                case 'f'://frekvence harmonického tónu
+                    Console.WriteLine("Zadejte délku struny v m");
+                    double delkaStruny = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Zadejte rychlost šíření vlnění");
+                    double rychlostVlneni = Convert.ToDouble(Console.ReadLine());
+                    
+                    double vyslednaFrekvence = rychlostVlneni/(2*delkaStruny);
+                    Console.WriteLine("Výsledná frekvence je {0} Hz.\nStisknutím jakéhokoliv tlačítka se vrátíte zpět do hlavního menu." vyslednaFrekvence);
+                    Console.ReadKey();
                     //something
                     break;
                 case 'g'://dlélka kyvadla
