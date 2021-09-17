@@ -181,7 +181,11 @@ namespace consoleMAPC
                     //smth
                     break;
                 case 'j'://průměr kapiláry
-                    //smth
+                    Console.WriteLine("Předpokládáme, že kapalina je voda.\nZadejte výšku, do které vzlínala kapalina v m.");
+                    double vyskaKapilary = Convert.ToDouble(Console.ReadKey());
+                    double prumerKapilary = (4*73*10^-13)/(1000*vyskaKapilary>9.81);
+                    Console.WriteLine("Průměr kapiláry je {0} m.\nStisknutím jakéhokoliv tlačítka se vrátite zpět do hlavního menu."prumerKapilary);
+                    Console.ReadKey();
                     break;
                 case 'k'://předání tepla
                     //smth
