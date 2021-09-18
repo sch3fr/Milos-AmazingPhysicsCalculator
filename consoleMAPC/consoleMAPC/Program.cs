@@ -387,8 +387,12 @@ namespace consoleMAPC
             }
             switch (localChoice)
             {
-                case 'a':
-                    //de Broglieova vlna
+                case 'a'://de Broglieova vlna
+                    Console.WriteLine("Zadejte urychlovací napětí ve V");
+                    double urychlovaciNapeti = Convert.ToDouble(Console.ReadLine());
+                    double vlnaVysledek = (planckKonst1*planckKonst2)/(Math.Sqrt(urychlovaciNapeti*2*9.1*(10^-13)*1.6*(10^-19)*10^4));
+                    Console.WriteLine("Výsledná vlnová délka je {0} m.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu");
+                    Console.ReadKey();
                     break;
                 case 'b'://energie fotonů
                     Console.WriteLine("Zadejte frekvenci v Hz.");
