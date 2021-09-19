@@ -157,7 +157,13 @@ namespace consoleMAPC
                     //something
                     break;
                 case 'b'://kinetická energie
-                    //smth
+                    Console.WriteLine("Zadejte hmotnost tělesa v g");
+                    double kinetHmotnost = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Zadejte rychlost tělesa v m*s -1")
+                    double kinetRychlost = Convert.ToDouble(Console.ReadLine());
+                    double kinetVysledek = (1/2)*kinetHmotnost*kinetVysledek*kinetVysledek;
+                    Console.WriteLine("Výsledná energie je {0}.\nStisknutím jak=hokoliv tlačítka se vrátíte zpět do hlavního menu.");//chybí jednotka
+                    Console.ReadKey();
                     break;
                 case 'c'://potenciální energie
                     //smth
@@ -370,7 +376,7 @@ namespace consoleMAPC
                     break;
             }
         }
-        public static void Mikro()
+        public static void Mikro()//DONE
         {
             double planckKonst1 = Math.Pow(10, -34);
             double planckKonst2 = 6.62607015;
