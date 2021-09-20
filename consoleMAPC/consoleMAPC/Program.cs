@@ -159,9 +159,9 @@ namespace consoleMAPC
                 case 'b'://kinetická energie
                     Console.WriteLine("Zadejte hmotnost tělesa v g");
                     double kinetHmotnost = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Zadejte rychlost tělesa v m*s -1")
+                    Console.WriteLine("Zadejte rychlost tělesa v m*s -1");
                     double kinetRychlost = Convert.ToDouble(Console.ReadLine());
-                    double kinetVysledek = (1/2)*kinetHmotnost*kinetVysledek*kinetVysledek;
+                    double kinetVysledek = (1/2)*kinetHmotnost*kinetRychlost*kinetRychlost;
                     Console.WriteLine("Výsledná energie je {0}.\nStisknutím jak=hokoliv tlačítka se vrátíte zpět do hlavního menu.");//chybí jednotka
                     Console.ReadKey();
                     break;
@@ -189,8 +189,8 @@ namespace consoleMAPC
                 case 'j'://průměr kapiláry
                     Console.WriteLine("Předpokládáme, že kapalina je voda.\nZadejte výšku, do které vzlínala kapalina v m.");
                     double vyskaKapilary = Convert.ToDouble(Console.ReadKey());
-                    double prumerKapilary = (4*73*10^-13)/(1000*vyskaKapilary>9.81);
-                    Console.WriteLine("Průměr kapiláry je {0} m.\nStisknutím jakéhokoliv tlačítka se vrátite zpět do hlavního menu."prumerKapilary);
+                    double prumerKapilary = ((4*73*10^-13)/(1000*vyskaKapilary*9,81));
+                    Console.WriteLine("Průměr kapiláry je {0} m.\nStisknutím jakéhokoliv tlačítka se vrátite zpět do hlavního menu.", prumerKapilary);
                     Console.ReadKey();
                     break;
                 case 'k'://předání tepla
@@ -236,7 +236,7 @@ namespace consoleMAPC
                     double rychlostVlneni = Convert.ToDouble(Console.ReadLine());
                     
                     double vyslednaFrekvence = rychlostVlneni/(2*delkaStruny);
-                    Console.WriteLine("Výsledná frekvence je {0} Hz.\nStisknutím jakéhokoliv tlačítka se vrátíte zpět do hlavního menu." vyslednaFrekvence);
+                    Console.WriteLine("Výsledná frekvence je {0} Hz.\nStisknutím jakéhokoliv tlačítka se vrátíte zpět do hlavního menu.", vyslednaFrekvence);
                     Console.ReadKey();
                     //something
                     break;
@@ -274,9 +274,9 @@ namespace consoleMAPC
                     double plochaDesek = Convert.ToDouble(Console.ReadLine());
                     Console.WriteLine("Zadejte relativní permitivitu");
                     double relativniPermitivita = Convert.ToDouble(Console.ReadLine());
-                    double vyslednaKapacita = (8,85*10^-12)*(plochaDesek(vzdalenostDesek));
+                    double vyslednaKapacita = (8.85*10.0^-12.0)*(plochaDesek)/(vzdalenostDesek);
                     Console.WriteLine("Výsledná kapacita deskového kondenzátoru je {0} F.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu.", vyslednaKapacita);
-                    Console:ReadKey();
+                    Console.ReadKey();
                     break;
                 case 'e'://uvolnění energie
                     //smth
@@ -396,7 +396,7 @@ namespace consoleMAPC
                 case 'a'://de Broglieova vlna
                     Console.WriteLine("Zadejte urychlovací napětí ve V");
                     double urychlovaciNapeti = Convert.ToDouble(Console.ReadLine());
-                    double vlnaVysledek = (planckKonst1*planckKonst2)/(Math.Sqrt(urychlovaciNapeti*2*9.1*(10^-13)*1.6*(10^-19)*10^4));
+                    double vlnaVysledek = (planckKonst1*planckKonst2)/(Math.Sqrt(urychlovaciNapeti*2.0*9.1*(10.0^-13.0)*1.6*(10^-19)*10^4));
                     Console.WriteLine("Výsledná vlnová délka je {0} m.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu");
                     Console.ReadKey();
                     break;
