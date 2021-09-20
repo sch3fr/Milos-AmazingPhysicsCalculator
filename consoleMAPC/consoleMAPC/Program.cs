@@ -183,8 +183,18 @@ namespace consoleMAPC
                 case 'h'://teplotní roztařnost
                     //smth
                     break;
-                case 'i'://deformační síla
-                    //smth
+                case 'i'://tahová deformační síla
+                    Console.WriteLine("Zadejte původní délku objektu v m");
+                    double deformDelkaP = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Zadejte změnu délky v m");
+                    double deformDelkaZ = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Zadejte obsah objektu v m2");
+                    double deformObsah = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Zadejte modul pružnosti tahu materiálu v Pa");
+                    double deformPruznost = Convert.ToDouble(Console.ReadLine());
+                    double deformVysledek = (deformObsah*deformPruznost*deformDelkaZ) / deformDelkaP;
+                    Console.WriteLine("Výsledek je {0} N.\nStisknutím jakéhokoliv tlačítka se vrátiíte zpět do hlavního menu.", deformVysledek);
+                    Console.ReadKey();
                     break;
                 case 'j'://průměr kapiláry
                     Console.WriteLine("Předpokládáme, že kapalina je voda.\nZadejte výšku, do které vzlínala kapalina v m.");
