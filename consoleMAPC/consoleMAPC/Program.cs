@@ -181,7 +181,13 @@ namespace consoleMAPC
                     //smth
                     break;
                 case 'h'://teplotní roztařnost
-                    //smth
+                    Console.WriteLine("Zadejte původní délku ocelového drátu v m");
+                    double roztaznostDelka = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Zadejte teplotní rozdíl");
+                    double roztaznostTeplota = Convert.ToDouble(Console.ReadLine());
+                    double roztaznostVysledek = roztaznostDelka * (1 + (11.5*10^6)*roztaznostTeplota);
+                    Console.WriteLine("Výsledná délka ocelového drátu je {0} m.\nStisknutím jakéhokoliv tlačítka se vrátiíte zpět do hlavního menu.", roztaznostVysledek);
+                    Console.ReadKey();
                     break;
                 case 'i'://tahová deformační síla
                     Console.WriteLine("Zadejte původní délku objektu v m");
