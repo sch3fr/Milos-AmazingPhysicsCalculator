@@ -162,11 +162,17 @@ namespace consoleMAPC
                     Console.WriteLine("Zadejte rychlost tělesa v m*s -1");
                     double kinetRychlost = Convert.ToDouble(Console.ReadLine());
                     double kinetVysledek = (1/2)*kinetHmotnost*kinetRychlost*kinetRychlost;
-                    Console.WriteLine("Výsledná energie je {0}.\nStisknutím jak=hokoliv tlačítka se vrátíte zpět do hlavního menu.");//chybí jednotka
+                    Console.WriteLine("Výsledná energie je {0}.\nStisknutím jakéhokoliv tlačítka se vrátíte zpět do hlavního menu.");//chybí jednotka
                     Console.ReadKey();
                     break;
                 case 'c'://potenciální energie
-                    //smth
+                    Console.WriteLine("Zadejte hmotnost tělesa v g");
+                    double potencialniVaha = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Zadejte výšku v m");
+                    double potencialniVyska = Convert.ToDouble(Console.ReadLine());
+                    double potencialniVysledek = potencialniVaha*potencialniVyska*9.81;
+                    Console.WriteLine("Výsledná energie je {0} J.\nStisknutím jakéhokoliv tlačítka se vrátíte zpět do hlavního menu.");
+                    Console.ReadKey();
                     break;
                 case 'd'://teplota soustavy po dosažení rovnovážného stavu
                     //smth
