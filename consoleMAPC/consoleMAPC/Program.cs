@@ -309,8 +309,14 @@ namespace consoleMAPC
                     Console.WriteLine("Výsledná kapacita deskového kondenzátoru je {0} F.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu.", vyslednaKapacita);
                     Console.ReadKey();
                     break;
-                case 'e'://uvolnění energie
-                    //smth
+                case 'e'://uvolnění energie kondenzátoru
+                    Console.WriteLine("Zadejte napětí ve V");
+                    double kondenzatorNapeti = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Zadejte kapacitu kondenzátoru v F");
+                    double kondenzatorKapacita = Convert.ToDouble(Console.ReadLine());
+                    double kondenzatorVysledek = (1/2)*(kondenzatorKapacita*kondenzatorNapeti*kondenzatorNapeti);
+                    Console.WriteLine("Výsledek je {0}.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu.", kondenzatorVysledek);//CHYBí JEDNOTKA
+                    Console.ReadKey();
                     break;
                 case 'f'://proud nabití kondenzátoru
                     //smth
