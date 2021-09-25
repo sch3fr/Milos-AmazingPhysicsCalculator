@@ -290,7 +290,17 @@ namespace consoleMAPC
             switch (localChoice)
             {
                 case 'a'://přitažlivá síla nábojů
-                    //something
+                    Console.WriteLine("Zadejte prní náboj v nC");
+                    double pritazlivostNaboje1 = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Zadejte druhý náboj v nC");
+                    double pritazlivostNaboje2 = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Zadejte vzdálenost nábojů v m");
+                    double pritazlivostNabojeVzdalenost = Convert.ToDouble(Console.ReadLine());
+                    double pritazlivostNabojeVysledek = (1/(4*Math.PI*8.85*10^-12))*Math.Abs((pritazlivostNaboje1*pritazlivostNaboje2)/pritazlivostNabojeVzdalenost*pritazlivostNabojeVysledek);
+                    Console.WriteLine("Výsledek je {0}.\nStisknutím jakéhokoliv talčítka se vrátíte do hlavního menu.", pritazlivostNabojeVysledek);//cybí jednotka
+                    Console.ReadKey();
+
+                    //F=k*|(q1*q2)/rr|
                     break;
                 case 'b'://intenzita elektrického pole
                     FunkceDeleni("elektrickou sílu", "elektrický náboj", "N.C^-1");
@@ -333,7 +343,7 @@ namespace consoleMAPC
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Optika\nCo počítáme?\na. barvu skvrny v odraženém bílém světle\nb. vlnovou délku světla\nc. vzdálenost předmětu od zrcadle\nd. zvětšení obrazu v zakřiveném zrcadle\n");
+            Console.WriteLine("Optika\nCo počítáme?\na. barvu olejové skvrny na hladině voddy v odraženém bílém světle\nb. vlnovou délku světla\nc. vzdálenost předmětu od zrcadle\nd. zvětšení obrazu v zakřiveném zrcadle\n");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
             while (localChoice != 'a')
             {
@@ -343,7 +353,9 @@ namespace consoleMAPC
             switch (localChoice)
             {
                 case 'a':
-                    //barva skvrny
+                    Console.WriteLine("Zadejte tloušťku skvrny μm");
+                    double skvrnaTloustka = Convert.ToDouble(Console.ReadLine());
+                    //WHAT
                     break;
                 case 'b'://vlnová délka světla
                     Console.WriteLine("Zadejte frekvenci světla v Hz");
