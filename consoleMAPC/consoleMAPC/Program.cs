@@ -329,6 +329,16 @@ namespace consoleMAPC
                     Console.ReadKey();
                     break;
                 case 'f'://proud nabití kondenzátoru
+                    Console.WriteLine("Zadejte kapacitu kondenzátoru v F");
+                    double nabitKondenzatorKapacita = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Zadejte napětí ve V");
+                    double nabitKondenzatorNapeti = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Zadejte dobu nabíjení kondenzátoru v s");
+                    double nabitKondenzatorCas = Convert.ToDouble(Console.ReadLine());
+                    double nabitKondenzatorVysledek = (nabitKondenzatorNapeti*nabitKondenzatorKapacita)/nabitKondenzatorCas;
+                    Console.WriteLine("Výsledek je {0} A.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu."nabitKondenzatorVysledek);
+                    Console.ReadKey();
+
                     //smth
                     break;
                 case 'g'://napětí na rezistorech a proudy na větvích obvodu
