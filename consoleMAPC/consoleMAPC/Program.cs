@@ -56,6 +56,14 @@ namespace consoleMAPC
             Console.WriteLine("\nVyberte si obor, z něhož je váš příklad.");
             Console.WriteLine("\n1. Mechanika\n2. Molekulová fyzika a termika\n3. Mechanické kmitání a vlnění\n4. Elektřina a magnetismus\n5. Optika\n6. Teorie relativity\n7. Fyzika mikrosvěta\n\nZmáčkněte 0 pro ukončení programu.");
         }
+        
+        public static double NewDouble()
+        {
+            double vstup = Convert.ToDouble(Console.ReadLine());
+            return vstup;
+        }
+
+
         public static void FunkceNasobeni(string zadani1, string zadani2, string vyslednaVelicina)
         {
             Console.WriteLine("Zadejte " + zadani1);
@@ -258,7 +266,23 @@ namespace consoleMAPC
                     //something
                     break;
                 case 'e'://okamžitá výchylka
-                    //something
+                    Console.WriteLine("Zadejte amplitudu");
+                    double vychylkaAmplituda = NewDouble();
+                    Console.WriteLine("Je zadaná frekvence nebo perioda? Zvolte F/P");
+                    char volba = char.ToLower(Console.ReadKey().KeyChar);
+                    if (volba == 't')
+                    {
+                        double vychylkaPerioda = NewDouble();
+                    }
+                    else if (volba == 'f')
+                    {
+                        double vychylkaFrekvence = NewDouble();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Chyba: Neplatná volba");
+                    }
+                    
                     break;
                 case 'f'://frekvence harmonického tónu
                     Console.WriteLine("Zadejte délku struny v m");
@@ -296,7 +320,7 @@ namespace consoleMAPC
                     double pritazlivostNaboje2 = Convert.ToDouble(Console.ReadLine());
                     Console.WriteLine("Zadejte vzdálenost nábojů v m");
                     double pritazlivostNabojeVzdalenost = Convert.ToDouble(Console.ReadLine());
-                    double pritazlivostNabojeVysledek = (1/(4*Math.PI*8.85*10^-12))*Math.Abs((pritazlivostNaboje1*pritazlivostNaboje2)/pritazlivostNabojeVzdalenost*pritazlivostNabojeVysledek);
+                    double pritazlivostNabojeVysledek = (1/(4*(Math.PI)*8.85*10^-12))*Math.Abs((pritazlivostNaboje1*pritazlivostNaboje2)/pritazlivostNabojeVzdalenost*pritazlivostNabojeVysledek);
                     Console.WriteLine("Výsledek je {0}.\nStisknutím jakéhokoliv talčítka se vrátíte do hlavního menu.", pritazlivostNabojeVysledek);//cybí jednotka
                     Console.ReadKey();
 
@@ -336,7 +360,7 @@ namespace consoleMAPC
                     Console.WriteLine("Zadejte dobu nabíjení kondenzátoru v s");
                     double nabitKondenzatorCas = Convert.ToDouble(Console.ReadLine());
                     double nabitKondenzatorVysledek = (nabitKondenzatorNapeti*nabitKondenzatorKapacita)/nabitKondenzatorCas;
-                    Console.WriteLine("Výsledek je {0} A.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu."nabitKondenzatorVysledek);
+                    Console.WriteLine("Výsledek je {0} A.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu.", nabitKondenzatorVysledek);
                     Console.ReadKey();
 
                     //smth
