@@ -166,18 +166,18 @@ namespace consoleMAPC
                     break;
                 case 'b'://kinetická energie
                     Console.WriteLine("Zadejte hmotnost tělesa v g");
-                    double kinetHmotnost = Convert.ToDouble(Console.ReadLine());
+                    double kinetHmotnost = NewDouble();
                     Console.WriteLine("Zadejte rychlost tělesa v m*s -1");
-                    double kinetRychlost = Convert.ToDouble(Console.ReadLine());
+                    double kinetRychlost = NewDouble();
                     double kinetVysledek = (1/2)*kinetHmotnost*kinetRychlost*kinetRychlost;
                     Console.WriteLine("Výsledná energie je {0}.\nStisknutím jakéhokoliv tlačítka se vrátíte zpět do hlavního menu.");//chybí jednotka
                     Console.ReadKey();
                     break;
                 case 'c'://potenciální energie
                     Console.WriteLine("Zadejte hmotnost tělesa v g");
-                    double potencialniVaha = Convert.ToDouble(Console.ReadLine());
+                    double potencialniVaha = NewDouble();
                     Console.WriteLine("Zadejte výšku v m");
-                    double potencialniVyska = Convert.ToDouble(Console.ReadLine());
+                    double potencialniVyska = NewDouble();
                     double potencialniVysledek = potencialniVaha*potencialniVyska*9.81;
                     Console.WriteLine("Výsledná energie je {0} J.\nStisknutím jakéhokoliv tlačítka se vrátíte zpět do hlavního menu.", potencialniVysledek);
                     Console.ReadKey();
@@ -188,11 +188,11 @@ namespace consoleMAPC
                 case 'e'://tlak ideálního plynu
                     ///TODO opravit jednotky a nápis v hlavním menu
                     Console.WriteLine("Zadejte teplotu v K");
-                    double idealnipTeplota = Convert.ToDouble(Console.ReadLine());
+                    double idealnipTeplota = NewDouble();
                     Console.WriteLine("Zadejte objem v m3");
-                    double idealnipObjem = Convert.ToDouble(Console.ReadLine());
+                    double idealnipObjem =  NewDouble();
                     Console.WriteLine("Zadejte počet molekul formou exponentu\n(Pokud je počet molekul např. 10 na 24, zadejte 24.)");
-                    double idealnipExponent = Convert.ToDouble(Console.ReadLine());
+                    double idealnipExponent =  NewDouble();
                     double idealnipVysledek = ((Math.Pow(10, idealnipExponent)*((Math.Pow(10, -23)*1,38)*idealnipTeplota ))/idealnipObjem);
                     Console.WriteLine("Výsledný tlak je {0} Pa.\nStisknutím jakéhokoliv tlačítka se vrátíte zpět do hlavního menu.", idealnipVysledek);
                     Console.ReadKey();
@@ -205,29 +205,29 @@ namespace consoleMAPC
                     break;
                 case 'h'://teplotní roztařnost
                     Console.WriteLine("Zadejte původní délku ocelového drátu v m");
-                    double roztaznostDelka = Convert.ToDouble(Console.ReadLine());
+                    double roztaznostDelka =  NewDouble();
                     Console.WriteLine("Zadejte teplotní rozdíl");
-                    double roztaznostTeplota = Convert.ToDouble(Console.ReadLine());
+                    double roztaznostTeplota =  NewDouble();
                     double roztaznostVysledek = roztaznostDelka * (1 + (11.5*10^6)*roztaznostTeplota);
                     Console.WriteLine("Výsledná délka ocelového drátu je {0} m.\nStisknutím jakéhokoliv tlačítka se vrátiíte zpět do hlavního menu.", roztaznostVysledek);
                     Console.ReadKey();
                     break;
                 case 'i'://tahová deformační síla
                     Console.WriteLine("Zadejte původní délku objektu v m");
-                    double deformDelkaP = Convert.ToDouble(Console.ReadLine());
+                    double deformDelkaP = NewDouble();
                     Console.WriteLine("Zadejte změnu délky v m");
-                    double deformDelkaZ = Convert.ToDouble(Console.ReadLine());
+                    double deformDelkaZ = NewDouble();
                     Console.WriteLine("Zadejte obsah objektu v m2");
-                    double deformObsah = Convert.ToDouble(Console.ReadLine());
+                    double deformObsah = NewDouble();
                     Console.WriteLine("Zadejte modul pružnosti tahu materiálu v Pa");
-                    double deformPruznost = Convert.ToDouble(Console.ReadLine());
+                    double deformPruznost = NewDouble();
                     double deformVysledek = (deformObsah*deformPruznost*deformDelkaZ) / deformDelkaP;
                     Console.WriteLine("Výsledek je {0} N.\nStisknutím jakéhokoliv tlačítka se vrátiíte zpět do hlavního menu.", deformVysledek);
                     Console.ReadKey();
                     break;
                 case 'j'://průměr kapiláry
                     Console.WriteLine("Předpokládáme, že kapalina je voda.\nZadejte výšku, do které vzlínala kapalina v m.");
-                    double vyskaKapilary = Convert.ToDouble(Console.ReadKey());
+                    double vyskaKapilary = NewDouble();
                     double prumerKapilary = ((4*73*10^-13)/(1000*vyskaKapilary*9,81));
                     Console.WriteLine("Průměr kapiláry je {0} m.\nStisknutím jakéhokoliv tlačítka se vrátite zpět do hlavního menu.", prumerKapilary);
                     Console.ReadKey();
@@ -252,7 +252,7 @@ namespace consoleMAPC
             {
                 case 'a'://amplituda výchylky
                     Console.WriteLine("Zadejte okamžitou výchylku");
-                    double vychylka = Convert.ToDouble(Console.ReadLine());
+                    double vychylka = NewDouble();
                     Console.WriteLine("Zadajte čas");
                     double cas = Convert.ToDouble(Console.ReadLine());
                     break;
@@ -286,9 +286,9 @@ namespace consoleMAPC
                     break;
                 case 'f'://frekvence harmonického tónu
                     Console.WriteLine("Zadejte délku struny v m");
-                    double delkaStruny = Convert.ToDouble(Console.ReadLine());
+                    double delkaStruny = NewDouble();
                     Console.WriteLine("Zadejte rychlost šíření vlnění");
-                    double rychlostVlneni = Convert.ToDouble(Console.ReadLine());
+                    double rychlostVlneni = NewDouble();
                     
                     double vyslednaFrekvence = rychlostVlneni/(2*delkaStruny);
                     Console.WriteLine("Výsledná frekvence je {0} Hz.\nStisknutím jakéhokoliv tlačítka se vrátíte zpět do hlavního menu.", vyslednaFrekvence);
@@ -315,11 +315,11 @@ namespace consoleMAPC
             {
                 case 'a'://přitažlivá síla nábojů
                     Console.WriteLine("Zadejte prní náboj v nC");
-                    double pritazlivostNaboje1 = Convert.ToDouble(Console.ReadLine());
+                    double pritazlivostNaboje1 = NewDouble();
                     Console.WriteLine("Zadejte druhý náboj v nC");
-                    double pritazlivostNaboje2 = Convert.ToDouble(Console.ReadLine());
+                    double pritazlivostNaboje2 = NewDouble();
                     Console.WriteLine("Zadejte vzdálenost nábojů v m");
-                    double pritazlivostNabojeVzdalenost = Convert.ToDouble(Console.ReadLine());
+                    double pritazlivostNabojeVzdalenost = NewDouble();
                     double pritazlivostNabojeVysledek = (1/(4*(Math.PI)*8.85*10^-12))*Math.Abs((pritazlivostNaboje1*pritazlivostNaboje2)/pritazlivostNabojeVzdalenost*pritazlivostNabojeVysledek);
                     Console.WriteLine("Výsledek je {0}.\nStisknutím jakéhokoliv talčítka se vrátíte do hlavního menu.", pritazlivostNabojeVysledek);//cybí jednotka
                     Console.ReadKey();
@@ -334,31 +334,31 @@ namespace consoleMAPC
                     break;
                 case 'd'://kapacita kondenzátoru
                     Console.WriteLine("Zadejte vzdálenost desek v m");
-                    double vzdalenostDesek = Convert.ToDouble(Console.ReadLine());
+                    double vzdalenostDesek = NewDouble();
                     Console.WriteLine("Zadejte plochu desek v m^2");
-                    double plochaDesek = Convert.ToDouble(Console.ReadLine());
+                    double plochaDesek = NewDouble();
                     Console.WriteLine("Zadejte relativní permitivitu");
-                    double relativniPermitivita = Convert.ToDouble(Console.ReadLine());
+                    double relativniPermitivita = NewDouble();
                     double vyslednaKapacita = (8.85*10.0^-12.0)*(plochaDesek)/(vzdalenostDesek);
                     Console.WriteLine("Výsledná kapacita deskového kondenzátoru je {0} F.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu.", vyslednaKapacita);
                     Console.ReadKey();
                     break;
                 case 'e'://uvolnění energie kondenzátoru
                     Console.WriteLine("Zadejte napětí ve V");
-                    double kondenzatorNapeti = Convert.ToDouble(Console.ReadLine());
+                    double kondenzatorNapeti = NewDouble();
                     Console.WriteLine("Zadejte kapacitu kondenzátoru v F");
-                    double kondenzatorKapacita = Convert.ToDouble(Console.ReadLine());
+                    double kondenzatorKapacita = NewDouble();
                     double kondenzatorVysledek = (1/2)*(kondenzatorKapacita*kondenzatorNapeti*kondenzatorNapeti);
                     Console.WriteLine("Výsledek je {0}.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu.", kondenzatorVysledek);//CHYBí JEDNOTKA
                     Console.ReadKey();
                     break;
                 case 'f'://proud nabití kondenzátoru
                     Console.WriteLine("Zadejte kapacitu kondenzátoru v F");
-                    double nabitKondenzatorKapacita = Convert.ToDouble(Console.ReadLine());
+                    double nabitKondenzatorKapacita = NewDouble();
                     Console.WriteLine("Zadejte napětí ve V");
-                    double nabitKondenzatorNapeti = Convert.ToDouble(Console.ReadLine());
+                    double nabitKondenzatorNapeti = NewDouble();
                     Console.WriteLine("Zadejte dobu nabíjení kondenzátoru v s");
-                    double nabitKondenzatorCas = Convert.ToDouble(Console.ReadLine());
+                    double nabitKondenzatorCas = NewDouble();
                     double nabitKondenzatorVysledek = (nabitKondenzatorNapeti*nabitKondenzatorKapacita)/nabitKondenzatorCas;
                     Console.WriteLine("Výsledek je {0} A.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu.", nabitKondenzatorVysledek);
                     Console.ReadKey();
@@ -388,12 +388,12 @@ namespace consoleMAPC
             {
                 case 'a':
                     Console.WriteLine("Zadejte tloušťku skvrny μm");
-                    double skvrnaTloustka = Convert.ToDouble(Console.ReadLine());
+                    double skvrnaTloustka = NewDouble();
                     //WHAT
                     break;
                 case 'b'://vlnová délka světla
                     Console.WriteLine("Zadejte frekvenci světla v Hz");
-                    double svetloFrek = Convert.ToDouble(Console.ReadLine());
+                    double svetloFrek = NewDouble();
                     double svetloFrekVysl = 300000/svetloFrek;
                     Console.WriteLine("Výsledek je {0} nm.\n Stiskem jakékoliv klávesy se vrátítte do hlavního menu", svetloFrekVysl);
                     Console.ReadKey();
@@ -426,9 +426,9 @@ namespace consoleMAPC
                     if (dilataceChoice == 'a')
                     {
                         Console.WriteLine("Zadejte dobu trvání události (v sekundách) v soustavě pohybující se rychlostí v");
-                        double dilDob1 = Convert.ToDouble(Console.ReadLine());
+                        double dilDob1 = NewDouble();
                         Console.WriteLine("Zadejte rychlost pohybu soustavy v km.s^-1");
-                        double dilRych = Convert.ToDouble(Console.ReadLine());
+                        double dilRych = NewDouble();
                         double dilVysledek = dilDob1/(Math.Sqrt(1-((dilRych*dilRych)/300000)));
                         Console.WriteLine("Výsledná doba je {0} s.",dilVysledek);
                         Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
@@ -437,9 +437,9 @@ namespace consoleMAPC
                     else if (dilataceChoice == 'b')
                     {
                         Console.WriteLine("Zadejte dobu trvání události (v sekundách) ve klidové soustavě");
-                        double dilDob2 = Convert.ToDouble(Console.ReadLine());
+                        double dilDob2 = NewDouble();
                         Console.WriteLine("Zadejte rychlost pohybu soustavy v km.s^-1");
-                        double dilRych = Convert.ToDouble(Console.ReadLine());
+                        double dilRych = NewDouble();
                         double dilVysledek = (Math.Sqrt(1-((dilRych*dilRych)/300000)))/dilDob2;
                         Console.WriteLine("Výsledná doba je {0} s.",dilVysledek);
                         Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
@@ -449,9 +449,9 @@ namespace consoleMAPC
                     break;
                 case 'b'://kontrakce délek
                     Console.WriteLine("Zadejte klidovou délku v m");
-                    double delkaKlid = Convert.ToDouble(Console.ReadLine());
+                    double delkaKlid = NewDouble();
                     Console.WriteLine("Zadejte rychost v km.s^-1");
-                    double kontrakceRychlost = Convert.ToDouble(Console.ReadLine());
+                    double kontrakceRychlost = NewDouble();
                     double kontrakceVysledek = delkaKlid*Math.Sqrt(1-((kontrakceRychlost*kontrakceRychlost)/300000));
                     Console.WriteLine("Výsledná délka je {0} m.",kontrakceVysledek);
                     Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
@@ -478,14 +478,14 @@ namespace consoleMAPC
             {
                 case 'a'://de Broglieova vlna
                     Console.WriteLine("Zadejte urychlovací napětí ve V");
-                    double urychlovaciNapeti = Convert.ToDouble(Console.ReadLine());
+                    double urychlovaciNapeti = NewDouble();
                     double vlnaVysledek = (planckKonst1*planckKonst2)/(Math.Sqrt(urychlovaciNapeti*2.0*9.1*(10.0^-13.0)*1.6*(10^-19)*10^4));
                     Console.WriteLine("Výsledná vlnová délka je {0} m.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu");
                     Console.ReadKey();
                     break;
                 case 'b'://energie fotonů
                     Console.WriteLine("Zadejte frekvenci v Hz.");
-                    double frekFoton = Convert.ToDouble(Console.ReadLine());
+                    double frekFoton = NewDouble();
                     double frekFotonVys = frekFoton*(planckKonst1*planckKonst2);
                     Console.WriteLine("Výsledná energie je {0} eV.",frekFotonVys);
                     Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
@@ -493,7 +493,7 @@ namespace consoleMAPC
                     break;
                 case 'c'://hybnost fotonů
                     Console.WriteLine("Zadejte energii v J.");
-                    double energFoton = Convert.ToDouble(Console.ReadLine());
+                    double energFoton = NewDouble();
                     double energFotonVys = energFoton/300000;
                     Console.WriteLine("Výsledná hybnost je {0} kg.m.s^-1.",energFotonVys);
                     Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
@@ -501,11 +501,11 @@ namespace consoleMAPC
                     break;
                 case 'd'://energie vyletujících fotonů
                     Console.WriteLine("Zadejte frekvenci v Hz");
-                    double energFoton2 = Convert.ToDouble(Console.ReadLine());
+                    double energFoton2 = NewDouble();
                     Console.WriteLine("Zadejte výstupní práci elektronů v eV");
-                    double vystupniPrace = Convert.ToDouble(Console.ReadLine());
+                    double vystupniPrace = NewDouble();
                     Console.WriteLine("Zadejte vlnovou délku v nm");
-                    double vlnDelka = Convert.ToDouble(Console.ReadKey());
+                    double vlnDelka = NewDouble();
                     double vysledEnergie = ((((planckKonst1*planckKonst2)*300000)/vlnDelka)-vystupniPrace);
                     Console.WriteLine("Výsledná energie je {0} ev.",vysledEnergie);
                     Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
