@@ -368,7 +368,7 @@ namespace consoleMAPC
                     double pritazlivostNaboje2 = NewDouble();
                     Console.WriteLine("Zadejte vzdálenost nábojů v m");
                     double pritazlivostNabojeVzdalenost = NewDouble();
-                    double pritazlivostNabojeVysledek = (1/(4*(Math.PI)*8.85*10^-12))*Math.Abs((pritazlivostNaboje1*pritazlivostNaboje2)/pritazlivostNabojeVzdalenost*pritazlivostNabojeVysledek);
+                    double pritazlivostNabojeVysledek = (1/(4*(Math.PI)*8.85*10^-12))*Math.Abs((pritazlivostNaboje1*pritazlivostNaboje2)/pritazlivostNabojeVzdalenost*pritazlivostNabojeVzdalenost);//JE TENHLE VZOREC SPRÁVNĚ??? JÁ NEVÍM, JSEM TEĎ OFFLINE!!!
                     Console.WriteLine("Výsledek je {0}.\nStisknutím jakéhokoliv talčítka se vrátíte do hlavního menu.", pritazlivostNabojeVysledek);//cybí jednotka
                     Console.ReadKey();
 
@@ -396,7 +396,7 @@ namespace consoleMAPC
                     double kondenzatorNapeti = NewDouble();
                     Console.WriteLine("Zadejte kapacitu kondenzátoru v F");
                     double kondenzatorKapacita = NewDouble();
-                    double kondenzatorVysledek = (1/2)*(kondenzatorKapacita*kondenzatorNapeti*kondenzatorNapeti);
+                    double kondenzatorVysledek = (1/2)*(kondenzatorKapacita*Math.Pow(kondenzatorNapeti, 2)); //???     kondenzatorNapeti*kondenzatorNapeti
                     Console.WriteLine("Výsledek je {0}.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu.", kondenzatorVysledek);//CHYBí JEDNOTKA
                     Console.ReadKey();
                     break;
@@ -481,7 +481,7 @@ namespace consoleMAPC
                         double dilDob1 = NewDouble();
                         Console.WriteLine("Zadejte rychlost pohybu soustavy v km.s^-1");
                         double dilRych = NewDouble();
-                        double dilVysledek = dilDob1/(Math.Sqrt(1-((dilRych*dilRych)/300000)));
+                        double dilVysledek = dilDob1/(Math.Sqrt(1-((Math.Pow(dilRych, 2))/300000))); //dilRych*dilRych ???
                         Console.WriteLine("Výsledná doba je {0} s.",dilVysledek);
                         Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
                         Console.ReadKey();
@@ -492,7 +492,7 @@ namespace consoleMAPC
                         double dilDob2 = NewDouble();
                         Console.WriteLine("Zadejte rychlost pohybu soustavy v km.s^-1");
                         double dilRych = NewDouble();
-                        double dilVysledek = (Math.Sqrt(1-((dilRych*dilRych)/300000)))/dilDob2;
+                        double dilVysledek = (Math.Sqrt(1-((Math.Pow(dilRych, 2))/300000)))/dilDob2; //dilRych*dilRych
                         Console.WriteLine("Výsledná doba je {0} s.",dilVysledek);
                         Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
                         Console.ReadKey();
@@ -504,7 +504,7 @@ namespace consoleMAPC
                     double delkaKlid = NewDouble();
                     Console.WriteLine("Zadejte rychost v km.s^-1");
                     double kontrakceRychlost = NewDouble();
-                    double kontrakceVysledek = delkaKlid*Math.Sqrt(1-((kontrakceRychlost*kontrakceRychlost)/300000));
+                    double kontrakceVysledek = delkaKlid*Math.Sqrt(1-((Math.Pow(kontrakceRychlost, 2))/300000)); //kontrakceRychlost*kontrakceRychlost
                     Console.WriteLine("Výsledná délka je {0} m.",kontrakceVysledek);
                     Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
                     Console.ReadKey();
@@ -515,7 +515,7 @@ namespace consoleMAPC
         {
             double planckKonst1 = Math.Pow(10, -34);
             double planckKonst2 = 6.62607015;
-
+            //  double planckovaKonst =(Math.Pow(10, -34))*6.62607015;  ???
 
             char localChoice; //used to navigate submenu
             Console.Clear();
