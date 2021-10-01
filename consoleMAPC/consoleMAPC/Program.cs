@@ -6,7 +6,7 @@ namespace consoleMAPC
     {
         static void Main(string[] args)
             //TODO převodník jednotek
-            //     delete default switch cases
+            //     delete default switch cases //1.OCT.21 Y THO??? WHAT DID I MEAN bY THAT???
             //     JAKOU HODNOTU MÁ PLANCKOVA KONSTANTA???
         {
             bool quitSwitch = false; //makes the do-while loop run, thus letting user choose again and agian
