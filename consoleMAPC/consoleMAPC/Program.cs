@@ -187,9 +187,9 @@ namespace consoleMAPC
             j. průměr kapiláry\n
             k. předání tepla");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
-            while (localChoice != 'a')
+            while ( ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g') && (localChoice != 'h') && (localChoice != 'i')&&(localChoice != 'j')&&(localChoice != 'k'));
             {
-                Console.WriteLine("Prosím vyberte možnost a-i");
+                Console.WriteLine("Prosím vyberte možnost a-k");
                 localChoice = char.ToLower(Console.ReadKey().KeyChar);
             }
             switch (localChoice)
