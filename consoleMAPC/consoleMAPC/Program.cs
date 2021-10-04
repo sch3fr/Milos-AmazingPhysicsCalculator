@@ -283,9 +283,9 @@ namespace consoleMAPC
             f. frekvenci harmonického tónu\n
             g. délku kyvadla");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
-            while (localChoice != 'a')
+            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g'));
             {
-                Console.WriteLine("Prosím vyberte možnost a-i");
+                Console.WriteLine("Prosím vyberte možnost a-g");
                 localChoice = char.ToLower(Console.ReadKey().KeyChar);
             }
             switch (localChoice)
@@ -354,7 +354,7 @@ namespace consoleMAPC
             g. napětí na rezistorech\n
             h. permitivitu\n");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
-            while (localChoice != 'a')
+            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g') && (localChoice != 'h'));
             {
                 Console.WriteLine("Prosím vyberte možnost a-h");
                 localChoice = char.ToLower(Console.ReadKey().KeyChar);
@@ -431,7 +431,7 @@ namespace consoleMAPC
             c. vzdálenost předmětu od zrcadla\n
             d. zvětšení obrazu v zakřiveném zrcadle\n");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
-            while (localChoice != 'a')
+            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd'))
             {
                 Console.WriteLine("Prosím vyberte možnost a-i");
                 localChoice = char.ToLower(Console.ReadKey().KeyChar);
