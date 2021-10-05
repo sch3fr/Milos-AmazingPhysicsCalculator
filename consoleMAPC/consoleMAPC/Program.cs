@@ -54,14 +54,7 @@ namespace consoleMAPC
             Console.Clear();
             Console.WriteLine("Milošova kvalitní fyzikální kalkulačka <3 v 0.2.0");
             Console.WriteLine("\nVyberte si obor, z něhož je váš příklad.");
-            Console.WriteLine("\n1. Mechanika\n
-            2. Molekulová fyzika a termika\n
-            3. Mechanické kmitání a vlnění\n
-            4. Elektřina a magnetismus\n
-            5. Optika\n
-            6. Teorie relativity\n
-            7. Fyzika mikrosvěta\n\n
-            Zmáčkněte 0 pro ukončení programu.");
+            Console.WriteLine("\n1. Mechanika\n2. Molekulová fyzika a termika\n3. Mechanické kmitání a vlnění\n4. Elektřina a magnetismus\n5. Optika\n6. Teorie relativity\n7. Fyzika mikrosvěta\n\nZmáčkněte 0 pro ukončení programu.");
         }
         
         public static double NewDouble()
@@ -69,7 +62,6 @@ namespace consoleMAPC
             double vstup = Convert.ToDouble(Console.ReadLine());
             return vstup;
         }
-
 
         public static void FunkceNasobeni(string zadani1, string zadani2, string vyslednaVelicina)
         {
@@ -81,7 +73,6 @@ namespace consoleMAPC
             Console.WriteLine("\nVýsledek je {0} {1}", result, vyslednaVelicina);
             Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu");
             Console.ReadKey();
-
         }
         public static void FunkceDeleni(string zadani1, string zadani2, string vyslednaVelicina)
         {
@@ -105,16 +96,7 @@ namespace consoleMAPC
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Mechanika\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou (a-j)\n
-            a. rychlost\
-            b. zrychlení\n
-            c. čas\n
-            d. dráhu\n
-            e. hybnost\n
-            f. sílu\n
-            g. výkon\n
-            h. tlak\n
-            i. hustotu\n");
+            Console.WriteLine("Mechanika\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou (a-j)\na. rychlost\nb. zrychlení\nc. čas\nd. dráhu\ne. hybnost\nf. sílu\ng. výkon\nh. tlak\ni. hustotu\n");
 
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
             while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g') && (localChoice != 'h') && (localChoice != 'i'))
@@ -174,20 +156,9 @@ namespace consoleMAPC
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Molekulová fyzika a termika.\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou.\n
-            a. První termodynamický zákon\n
-            b. kinetickou enegii\n
-            c. potenciální energii\n
-            d. teplotu soustavy po dosažení ideálního stavu\n
-            e. tlak ideálního plynu\n
-            f. objem plynu\n
-            g. vztah teploty a tlaku\n
-            h. teplotní roztažnost\n
-            i. tahovou deformační sílu\n
-            j. průměr kapiláry\n
-            k. předání tepla");
+            Console.WriteLine("Molekulová fyzika a termika.\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou.\na. První termodynamický zákon\nb. kinetickou enegii\nc. potenciální energii\nd. teplotu soustavy po dosažení ideálního stavu\ne. tlak ideálního plynu\nf. objem plynu\ng. vztah teploty a tlaku\nh. teplotní roztažnost\ni. tahovou deformační sílu\nj. průměr kapiláry\nk. předání tepla");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
-            while ( ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g') && (localChoice != 'h') && (localChoice != 'i')&&(localChoice != 'j')&&(localChoice != 'k'));
+            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g') && (localChoice != 'h') && (localChoice != 'i')&&(localChoice != 'j')&&(localChoice != 'k'));
             {
                 Console.WriteLine("Prosím vyberte možnost a-k");
                 localChoice = char.ToLower(Console.ReadKey().KeyChar);
@@ -274,14 +245,7 @@ namespace consoleMAPC
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Mechanické kmitání a vlnění.\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou.\n
-            a. amplitudu výchylky\n
-            b. periodu\n
-            c. počáteční fázi kmitání\n
-            d. doba amplitudy\n
-            e. okamžitou výchylku\n
-            f. frekvenci harmonického tónu\n
-            g. délku kyvadla");
+            Console.WriteLine("Mechanické kmitání a vlnění.\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou.\na. amplitudu výchylky\nb. periodu\nc. počáteční fázi kmitání\nd. doba amplitudy\ne. okamžitou výchylku\nf. frekvenci harmonického tónu\ng. délku kyvadla");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
             while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g'));
             {
@@ -329,7 +293,6 @@ namespace consoleMAPC
                     double delkaStruny = NewDouble();
                     Console.WriteLine("Zadejte rychlost šíření vlnění");
                     double rychlostVlneni = NewDouble();
-                    
                     double vyslednaFrekvence = rychlostVlneni/(2*delkaStruny);
                     Console.WriteLine("Výsledná frekvence je {0} Hz.\nStisknutím jakéhokoliv tlačítka se vrátíte zpět do hlavního menu.", vyslednaFrekvence);
                     Console.ReadKey();
@@ -344,15 +307,7 @@ namespace consoleMAPC
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Co počítáme?\n\n
-            a. přitažlivou sílu nábojů\n
-            b. intenzitu elektrického pole\n
-            c. napětí mezi dvěma daskami\n
-            d. kapacitu kondenzátoru\n
-            e. uvolnění energie\n
-            f. proud nabití kondenzátoru\n
-            g. napětí na rezistorech\n
-            h. permitivitu\n");
+            Console.WriteLine("Co počítáme?\n\na. přitažlivou sílu nábojů\nb. intenzitu elektrického pole\nc. napětí mezi dvěma daskami\nd. kapacitu kondenzátoru\ne. uvolnění energie\nf. proud nabití kondenzátoru\ng. napětí na rezistorech\nh. permitivitu\n");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
             while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g') && (localChoice != 'h'));
             {
@@ -425,11 +380,7 @@ namespace consoleMAPC
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Optika\nCo počítáme?\n
-            a. barvu olejové skvrny na hladině voddy v odraženém bílém světle\n
-            b. vlnovou délku světla\n
-            c. vzdálenost předmětu od zrcadla\n
-            d. zvětšení obrazu v zakřiveném zrcadle\n");
+            Console.WriteLine("Optika\nCo počítáme?\na. barvu olejové skvrny na hladině voddy v odraženém bílém světle\nb. vlnovou délku světla\nc. vzdálenost předmětu od zrcadla\nd. zvětšení obrazu v zakřiveném zrcadle\n");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
             while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd'))
             {
@@ -519,11 +470,7 @@ namespace consoleMAPC
 
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Fyzika mikrosvěta\nCo počítáme?\n
-            a. délku de Broglieovy vlny\n
-            b. energii fotonů\n
-            c. hybnost fotonů\n
-            d. energii vyletujících elektronů\n");
+            Console.WriteLine("Fyzika mikrosvěta\nCo počítáme?\na. délku de Broglieovy vlny\nb. energii fotonů\nc. hybnost fotonů\nd. energii vyletujících elektronů\n");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
             while (localChoice != 'a')
             {
