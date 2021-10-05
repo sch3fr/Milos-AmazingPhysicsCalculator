@@ -197,7 +197,7 @@ namespace consoleMAPC
                     double idealnipObjem =  NewDouble();
                     Console.WriteLine("Zadejte počet molekul formou exponentu\n(Pokud je počet molekul např. 10 na 24, zadejte 24.)");
                     double idealnipExponent =  NewDouble();
-                    double idealnipVysledek = ((Math.Pow(10, idealnipExponent)*((Math.Pow(10, -23)*1,38)*idealnipTeplota ))/idealnipObjem);
+                    double idealnipVysledek = ((Math.Pow(10, idealnipExponent)*((Math.Pow(10, -23)*1.38)*idealnipTeplota ))/idealnipObjem);
                     Console.WriteLine("Výsledný tlak je {0} Pa.\nStisknutím jakéhokoliv tlačítka se vrátíte zpět do hlavního menu.", idealnipVysledek);
                     Console.ReadKey();
                     break;
@@ -212,7 +212,7 @@ namespace consoleMAPC
                     double roztaznostDelka =  NewDouble();
                     Console.WriteLine("Zadejte teplotní rozdíl");
                     double roztaznostTeplota =  NewDouble();
-                    double roztaznostVysledek = roztaznostDelka * (1 + (11.5*10^6)*roztaznostTeplota);
+                    double roztaznostVysledek = roztaznostDelka * (1 + (11.5*Math.Pow(10, 6))*roztaznostTeplota);
                     Console.WriteLine("Výsledná délka ocelového drátu je {0} m.\nStisknutím jakéhokoliv tlačítka se vrátiíte zpět do hlavního menu.", roztaznostVysledek);
                     Console.ReadKey();
                     break;
@@ -232,7 +232,7 @@ namespace consoleMAPC
                 case 'j'://průměr kapiláry
                     Console.WriteLine("Předpokládáme, že kapalina je voda.\nZadejte výšku, do které vzlínala kapalina v m.");
                     double vyskaKapilary = NewDouble();
-                    double prumerKapilary = ((4*73*10^-13)/(1000*vyskaKapilary*9,81));
+                    double prumerKapilary = ((4*73*Math.Pow(10,-13))/(1000*vyskaKapilary*9.81));
                     Console.WriteLine("Průměr kapiláry je {0} m.\nStisknutím jakéhokoliv tlačítka se vrátite zpět do hlavního menu.", prumerKapilary);
                     Console.ReadKey();
                     break;
@@ -323,7 +323,7 @@ namespace consoleMAPC
                     double pritazlivostNaboje2 = NewDouble();
                     Console.WriteLine("Zadejte vzdálenost nábojů v m");
                     double pritazlivostNabojeVzdalenost = NewDouble();
-                    double pritazlivostNabojeVysledek = (1/(4*(Math.PI)*8.85*10^-12))*Math.Abs((pritazlivostNaboje1*pritazlivostNaboje2)/pritazlivostNabojeVzdalenost*pritazlivostNabojeVzdalenost);//JE TENHLE VZOREC SPRÁVNĚ??? JÁ NEVÍM, JSEM TEĎ OFFLINE!!!
+                    double pritazlivostNabojeVysledek = (1/(4*(Math.PI)*8.85*Math.Pow(10, -22)))*Math.Abs((pritazlivostNaboje1*pritazlivostNaboje2)/pritazlivostNabojeVzdalenost*pritazlivostNabojeVzdalenost);//JE TENHLE VZOREC SPRÁVNĚ??? JÁ NEVÍM, JSEM TEĎ OFFLINE!!!
                     Console.WriteLine("Výsledek je {0}.\nStisknutím jakéhokoliv talčítka se vrátíte do hlavního menu.", pritazlivostNabojeVysledek);//cybí jednotka
                     Console.ReadKey();
 
@@ -342,7 +342,7 @@ namespace consoleMAPC
                     double plochaDesek = NewDouble();
                     Console.WriteLine("Zadejte relativní permitivitu");
                     double relativniPermitivita = NewDouble();
-                    double vyslednaKapacita = (8.85*10.0^-12.0)*(plochaDesek)/(vzdalenostDesek);
+                    double vyslednaKapacita = (8.85*Math.Pow(10.0, -12.0))*(plochaDesek)/(vzdalenostDesek);
                     Console.WriteLine("Výsledná kapacita deskového kondenzátoru je {0} F.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu.", vyslednaKapacita);
                     Console.ReadKey();
                     break;
@@ -482,7 +482,7 @@ namespace consoleMAPC
                 case 'a'://de Broglieova vlna
                     Console.WriteLine("Zadejte urychlovací napětí ve V");
                     double urychlovaciNapeti = NewDouble();
-                    double vlnaVysledek = (planckKonst1*planckKonst2)/(Math.Sqrt(urychlovaciNapeti*2.0*9.1*(10.0^-13.0)*1.6*(10^-19)*10^4));
+                    double vlnaVysledek = (planckKonst1*planckKonst2)/(Math.Sqrt(urychlovaciNapeti*2.0*9.1*Math.Pow(10.0,-13.0)*1.6*(10^-19)*Math.Pow(10,4)));
                     Console.WriteLine("Výsledná vlnová délka je {0} m.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu");
                     Console.ReadKey();
                     break;
