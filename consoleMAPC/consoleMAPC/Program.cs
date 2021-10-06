@@ -158,7 +158,7 @@ namespace consoleMAPC
             Console.Clear();
             Console.WriteLine("Molekulová fyzika a termika.\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou.\na. První termodynamický zákon\nb. kinetickou enegii\nc. potenciální energii\nd. teplotu soustavy po dosažení ideálního stavu\ne. tlak ideálního plynu\nf. objem plynu\ng. vztah teploty a tlaku\nh. teplotní roztažnost\ni. tahovou deformační sílu\nj. průměr kapiláry\nk. předání tepla");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
-            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g') && (localChoice != 'h') && (localChoice != 'i')&&(localChoice != 'j')&&(localChoice != 'k'));
+            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g') && (localChoice != 'h') && (localChoice != 'i')&&(localChoice != 'j')&&(localChoice != 'k'))
             {
                 Console.WriteLine("Prosím vyberte možnost a-k");
                 localChoice = char.ToLower(Console.ReadKey().KeyChar);
@@ -247,7 +247,7 @@ namespace consoleMAPC
             Console.Clear();
             Console.WriteLine("Mechanické kmitání a vlnění.\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou.\na. amplitudu výchylky\nb. periodu\nc. počáteční fázi kmitání\nd. doba amplitudy\ne. okamžitou výchylku\nf. frekvenci harmonického tónu\ng. délku kyvadla");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
-            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g'));
+            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g'))
             {
                 Console.WriteLine("Prosím vyberte možnost a-g");
                 localChoice = char.ToLower(Console.ReadKey().KeyChar);
@@ -309,7 +309,7 @@ namespace consoleMAPC
             Console.Clear();
             Console.WriteLine("Co počítáme?\n\na. přitažlivou sílu nábojů\nb. intenzitu elektrického pole\nc. napětí mezi dvěma daskami\nd. kapacitu kondenzátoru\ne. uvolnění energie\nf. proud nabití kondenzátoru\ng. napětí na rezistorech\nh. permitivitu\n");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
-            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g') && (localChoice != 'h'));
+            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g') && (localChoice != 'h'))
             {
                 Console.WriteLine("Prosím vyberte možnost a-h");
                 localChoice = char.ToLower(Console.ReadKey().KeyChar);
@@ -415,7 +415,7 @@ namespace consoleMAPC
             Console.Clear();
             Console.WriteLine("Speciální teorie relativity\nCo počítáme?\na. dilataci času\nb.kontrakci délek");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
-            while (localChoice != 'a')
+            while ((localChoice != 'a') && (localChoice != 'b'))
             {
                 Console.WriteLine("Prosím vyberte možnost a-b");
                 localChoice = char.ToLower(Console.ReadKey().KeyChar);
@@ -472,7 +472,7 @@ namespace consoleMAPC
             Console.Clear();
             Console.WriteLine("Fyzika mikrosvěta\nCo počítáme?\na. délku de Broglieovy vlny\nb. energii fotonů\nc. hybnost fotonů\nd. energii vyletujících elektronů\n");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
-            while (localChoice != 'a')
+            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd'))
             {
                 Console.WriteLine("Prosím vyberte možnost a-i");
                 localChoice = char.ToLower(Console.ReadKey().KeyChar);
