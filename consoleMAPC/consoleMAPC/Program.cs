@@ -238,8 +238,10 @@ namespace consoleMAPC
                     break;
                 case 'k'://předání tepla
                     //smth
-                    break;                
+                    break;
+                
             }
+            Menu();
         }
         public static void KmitVln()
         {
@@ -302,6 +304,7 @@ namespace consoleMAPC
                     //something
                     break;
             }
+            Menu();
         }
         public static void ElMag()//TODO sloučit: napětí na rezistorech + proudy na větvích
         {
@@ -375,6 +378,7 @@ namespace consoleMAPC
                     FunkceDeleni("elektrickou indukci v C.m^2", "intenzitu elektrického pole v N.C^-1", "F.m^-1");
                     break;
             }
+            Menu();
         }
         public static void Optika()
         {
@@ -408,6 +412,7 @@ namespace consoleMAPC
                     //zvětšení obrazu v zakřiveném zrcadle
                     break;
             }
+            Menu();
         }
         public static void Str() //DONE
         {
@@ -461,6 +466,7 @@ namespace consoleMAPC
                     Console.ReadKey();
                     break;
             }
+            Menu();
         }
         public static void Mikro()//DONE
         {
@@ -515,6 +521,7 @@ namespace consoleMAPC
                     Console.ReadKey();
                     break;
             }
+            Menu();
         }
     }
 }
