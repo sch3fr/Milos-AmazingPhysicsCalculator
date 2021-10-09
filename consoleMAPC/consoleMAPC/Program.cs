@@ -174,7 +174,7 @@ namespace consoleMAPC
                     Console.WriteLine("Zadejte rychlost tělesa v m*s -1");
                     double kinetRychlost = NewDouble();
                     double kinetVysledek = (1/2)*kinetHmotnost*kinetRychlost*kinetRychlost;
-                    Console.WriteLine("Výsledná energie je {0}.\nStisknutím jakéhokoliv tlačítka se vrátíte zpět do hlavního menu.");//chybí jednotka
+                    Console.WriteLine("Výsledná energie je {0}.\nStisknutím jakéhokoliv tlačítka se vrátíte zpět do hlavního menu.", kinetVysledek);//chybí jednotka
                     Console.ReadKey();
                     break;
                 case 'c'://potenciální energie
