@@ -329,8 +329,6 @@ namespace consoleMAPC
                     double pritazlivostNabojeVysledek = (1/(4*(Math.PI)*8.85*Math.Pow(10, -22)))*Math.Abs((pritazlivostNaboje1*pritazlivostNaboje2)/pritazlivostNabojeVzdalenost*pritazlivostNabojeVzdalenost);//JE TENHLE VZOREC SPRÁVNĚ??? JÁ NEVÍM, JSEM TEĎ OFFLINE!!!
                     Console.WriteLine("Výsledek je {0}.\nStisknutím jakéhokoliv talčítka se vrátíte do hlavního menu.", pritazlivostNabojeVysledek);//cybí jednotka
                     Console.ReadKey();
-
-                    //F=k*|(q1*q2)/rr|
                     break;
                 case 'b'://intenzita elektrického pole
                     FunkceDeleni("elektrickou sílu", "elektrický náboj", "N.C^-1");
