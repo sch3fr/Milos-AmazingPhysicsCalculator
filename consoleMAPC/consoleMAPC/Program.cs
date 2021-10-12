@@ -187,7 +187,17 @@ namespace consoleMAPC
                     Console.ReadKey();
                     break;
                 case 'd'://teplota soustavy po dosažení rovnovážného stavu
-                    //smth
+                    Console.WriteLine("Počítáme s hlinikovým předmětem ve vodě.\nZadejte hmotnost hliníkového předmětu v g");
+                    double rovnovaznaHmotnost1 = NewDouble();
+                    Console.WriteLine("Zadejte teplotu hliníkového předmětu v °C");
+                    double rovnovaznaTeplota1 = NewDouble();
+                    Console.WriteLine("Zadejte hmotnost vody v g");
+                    double rovnovaznaHmotnost2 = NewDouble();
+                    Console.WriteLine("Zadejte teplotu vody v °C");
+                    double rovnovaznaTeplota2 = NewDouble();
+                    double rovnovaznaVysledek = ((rovnovaznaHmotnost1*rovnovaznaTeplota1*896)+(rovnovaznaHmotnost2*rovnovaznaTeplota2*4200)) / ((rovnovaznaHmotnost2*4200)+(rovnovaznaHmotnost1*896));
+                    //vysledek=(m1c1t1+m2c2t2)/(m2c2+m1c1)
+                    Console.WriteLine("Výsledek je {0} °C. Stisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu.", rovnovaznaVysledek);
                     break;
                 case 'e'://tlak ideálního plynu
                     ///TODO opravit jednotky
