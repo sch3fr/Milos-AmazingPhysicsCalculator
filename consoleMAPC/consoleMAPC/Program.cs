@@ -86,12 +86,15 @@ namespace consoleMAPC
             Console.ReadKey();
         }
         
-        /*
-        public static void FunkceDeleniKonst
+        
+        /*public static void FunkceDeleniKonst(string zadani1, string zadani2, string konstanta, string vyslednaVelicina)
         {
-
-        }
-        */
+            Console.WriteLine("Zadejte " + zadani1);
+            double firstInput = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Zadejte " + zadani2);
+            double secondInput = Convert.ToDouble(Console.ReadLine());
+        }*/
+        
         public static void Mechanika() //DONE
         {
             char localChoice; //used to navigate submenu
