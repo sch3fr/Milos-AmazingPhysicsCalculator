@@ -155,23 +155,21 @@ namespace consoleMAPC
             }
             Menu();
         }
-        public static void MoleTermik()
+        public static void MoleTermik() //SOMEWHAT DONE
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Molekulová fyzika a termika.\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou.\na. První termodynamický zákon\nb. kinetickou enegii\nc. potenciální energii\nd. teplotu soustavy po dosažení ideálního stavu\ne. tlak ideálního plynu\nf. objem plynu\ng. vztah teploty a tlaku\nh. teplotní roztažnost\ni. tahovou deformační sílu\nj. průměr kapiláry\nk. předání tepla");
+            Console.WriteLine("Molekulová fyzika a termika.\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou.\na. kinetickou enegii\nb. potenciální energii\nc. teplotu soustavy po dosažení ideálního stavu\nd. tlak ideálního plynu\ne. teplotní roztažnost\nf.  tahovou deformační sílu\ng. průměr kapiláry\n");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
-            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g') && (localChoice != 'h') && (localChoice != 'i')&&(localChoice != 'j')&&(localChoice != 'k'))
+            //možnosti přidat: první termodynamický zákon, objem plynu, vztah teploty a tlaku, předání tepla
+            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g'))
             {
                 Console.WriteLine("Prosím vyberte možnost a-k");
                 localChoice = char.ToLower(Console.ReadKey().KeyChar);
             }
             switch (localChoice)
             {
-                case 'a': //první termodynamický zákon
-                    //something
-                    break;
-                case 'b'://kinetická energie
+                case 'a'://kinetická energie
                     Console.WriteLine("Zadejte hmotnost tělesa v g");
                     double kinetHmotnost = NewDouble();
                     Console.WriteLine("Zadejte rychlost tělesa v m*s -1");
@@ -180,7 +178,7 @@ namespace consoleMAPC
                     Console.WriteLine("Výsledná energie je {0}.\nStisknutím jakéhokoliv tlačítka se vrátíte zpět do hlavního menu.", kinetVysledek);//chybí jednotka
                     Console.ReadKey();
                     break;
-                case 'c'://potenciální energie
+                case 'b'://potenciální energie
                     Console.WriteLine("Zadejte hmotnost tělesa v g");
                     double potencialniVaha = NewDouble();
                     Console.WriteLine("Zadejte výšku v m");
@@ -189,7 +187,7 @@ namespace consoleMAPC
                     Console.WriteLine("Výsledná energie je {0} J.\nStisknutím jakéhokoliv tlačítka se vrátíte zpět do hlavního menu.", potencialniVysledek);
                     Console.ReadKey();
                     break;
-                case 'd'://teplota soustavy po dosažení rovnovážného stavu
+                case 'c'://teplota soustavy po dosažení rovnovážného stavu
                     Console.WriteLine("Počítáme s hlinikovým předmětem ve vodě.\nZadejte hmotnost hliníkového předmětu v g");
                     double rovnovaznaHmotnost1 = NewDouble();
                     Console.WriteLine("Zadejte teplotu hliníkového předmětu v °C");
@@ -202,7 +200,7 @@ namespace consoleMAPC
                     //vysledek=(m1c1t1+m2c2t2)/(m2c2+m1c1)
                     Console.WriteLine("Výsledek je {0} °C. Stisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu.", rovnovaznaVysledek);
                     break;
-                case 'e'://tlak ideálního plynu
+                case 'd'://tlak ideálního plynu
                     ///TODO opravit jednotky
                     Console.WriteLine("Zadejte teplotu v K");
                     double idealnipTeplota = NewDouble();
@@ -214,13 +212,7 @@ namespace consoleMAPC
                     Console.WriteLine("Výsledný tlak je {0} Pa.\nStisknutím jakéhokoliv tlačítka se vrátíte zpět do hlavního menu.", idealnipVysledek);
                     Console.ReadKey();
                     break;
-                case 'f'://objem plynu + změna oběmu plynu
-                    //smth
-                    break;
-                case 'g'://vztah teploty a tlaku
-                    //smth
-                    break;
-                case 'h'://teplotní roztařnost
+                case 'e'://teplotní roztařnost
                     Console.WriteLine("Zadejte původní délku ocelového drátu v m");
                     double roztaznostDelka =  NewDouble();
                     Console.WriteLine("Zadejte teplotní rozdíl");
@@ -229,7 +221,7 @@ namespace consoleMAPC
                     Console.WriteLine("Výsledná délka ocelového drátu je {0} m.\nStisknutím jakéhokoliv tlačítka se vrátiíte zpět do hlavního menu.", roztaznostVysledek);
                     Console.ReadKey();
                     break;
-                case 'i'://tahová deformační síla
+                case 'f'://tahová deformační síla
                     Console.WriteLine("Zadejte původní délku objektu v m");
                     double deformDelkaP = NewDouble();
                     Console.WriteLine("Zadejte změnu délky v m");
@@ -242,27 +234,24 @@ namespace consoleMAPC
                     Console.WriteLine("Výsledek je {0} N.\nStisknutím jakéhokoliv tlačítka se vrátiíte zpět do hlavního menu.", deformVysledek);
                     Console.ReadKey();
                     break;
-                case 'j'://průměr kapiláry
+                case 'g'://průměr kapiláry
                     Console.WriteLine("Předpokládáme, že kapalina je voda.\nZadejte výšku, do které vzlínala kapalina v m.");
                     double vyskaKapilary = NewDouble();
                     double prumerKapilary = ((4*73*Math.Pow(10,-13))/(1000*vyskaKapilary*9.81));
                     Console.WriteLine("Průměr kapiláry je {0} m.\nStisknutím jakéhokoliv tlačítka se vrátite zpět do hlavního menu.", prumerKapilary);
                     Console.ReadKey();
                     break;
-                case 'k'://předání tepla
-                    //smth
-                    break;
-                
             }
             Menu();
         }
-        public static void KmitVln()
+        public static void KmitVln() //SOMEWHAT DONE
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Mechanické kmitání a vlnění.\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou.\na. amplitudu výchylky\nb. periodu\nc. počáteční fázi kmitání\nd. doba amplitudy\ne. okamžitou výchylku\nf. frekvenci harmonického tónu\ng. délku kyvadla");
+            Console.WriteLine("Mechanické kmitání a vlnění.\n\nCo počítáme?\nPro výběr zmáčkni klávesu před veličinou.\na. amplitudu výchylky\nb. okamžitou výchylku\nc. frekvenci harmonického tónu\n");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
-            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g'))
+            //možnost dodat: délka periody, počáteční fáze, doba amplitudy, délka kyvadla
+            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c'))
             {
                 Console.WriteLine("Prosím vyberte možnost a-g");
                 localChoice = char.ToLower(Console.ReadKey().KeyChar);
@@ -275,16 +264,7 @@ namespace consoleMAPC
                     Console.WriteLine("Zadajte čas");
                     double cas = Convert.ToDouble(Console.ReadLine());
                     break;
-                case 'b'://perioda
-                    //something
-                    break;
-                case 'c'://počáteční fáze
-                    //something
-                    break;
-                case 'd'://doba amplitudy
-                    //something
-                    break;
-                case 'e'://okamžitá výchylka
+                case 'b'://okamžitá výchylka
                     Console.WriteLine("Zadejte amplitudu");
                     double vychylkaAmplituda = NewDouble();
                     Console.WriteLine("Je zadaná frekvence nebo perioda? Zvolte F/P");
@@ -303,7 +283,7 @@ namespace consoleMAPC
                     }
                     
                     break;
-                case 'f'://frekvence harmonického tónu
+                case 'c'://frekvence harmonického tónu
                     Console.WriteLine("Zadejte délku struny v m");
                     double delkaStruny = NewDouble();
                     Console.WriteLine("Zadejte rychlost šíření vlnění");
@@ -311,9 +291,6 @@ namespace consoleMAPC
                     double vyslednaFrekvence = rychlostVlneni/(2*delkaStruny);
                     Console.WriteLine("Výsledná frekvence je {0} Hz.\nStisknutím jakéhokoliv tlačítka se vrátíte zpět do hlavního menu.", vyslednaFrekvence);
                     Console.ReadKey();
-                    //something
-                    break;
-                case 'g'://dlélka kyvadla
                     //something
                     break;
             }
