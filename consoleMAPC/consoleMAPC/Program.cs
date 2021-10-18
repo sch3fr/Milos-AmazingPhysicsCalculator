@@ -296,13 +296,14 @@ namespace consoleMAPC
             }
             Menu();
         }
-        public static void ElMag()//TODO sloučit: napětí na rezistorech + proudy na větvích
+        public static void ElMag()//SOMEWHAT DONE
         {
             char localChoice; //used to navigate submenu
             Console.Clear();
-            Console.WriteLine("Co počítáme?\n\na. přitažlivou sílu nábojů\nb. intenzitu elektrického pole\nc. napětí mezi dvěma daskami\nd. kapacitu kondenzátoru\ne. uvolnění energie\nf. proud nabití kondenzátoru\ng. napětí na rezistorech\nh. permitivitu\n");
+            Console.WriteLine("Co počítáme?\n\na. přitažlivou sílu nábojů\nb. kapacitu kondenzátoru\nc. uvolnění energie kondenzátoru\nd. proud nabití kondenzátoru\ne. permitivitu\n");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
-            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e') && (localChoice != 'f') && (localChoice != 'g') && (localChoice != 'h'))
+            //možnost dodat: intenzita elektrického pole, napětí mezi dvěma náboji, napětí na rezistorech
+            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd') && (localChoice != 'e'))
             {
                 Console.WriteLine("Prosím vyberte možnost a-h");
                 localChoice = char.ToLower(Console.ReadKey().KeyChar);
@@ -320,13 +321,7 @@ namespace consoleMAPC
                     Console.WriteLine("Výsledek je {0}.\nStisknutím jakéhokoliv talčítka se vrátíte do hlavního menu.", pritazlivostNabojeVysledek);//cybí jednotka
                     Console.ReadKey();
                     break;
-                case 'b'://intenzita elektrického pole
-                    FunkceDeleni("elektrickou sílu", "elektrický náboj", "N.C^-1");
-                    break;
-                case 'c'://napětí mezi dvěma náboji
-                    //smth
-                    break;
-                case 'd'://kapacita kondenzátoru
+                case 'b'://kapacita kondenzátoru
                     Console.WriteLine("Zadejte vzdálenost desek v m");
                     double vzdalenostDesek = NewDouble();
                     Console.WriteLine("Zadejte plochu desek v m^2");
@@ -337,7 +332,7 @@ namespace consoleMAPC
                     Console.WriteLine("Výsledná kapacita deskového kondenzátoru je {0} F.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu.", vyslednaKapacita);
                     Console.ReadKey();
                     break;
-                case 'e'://uvolnění energie kondenzátoru
+                case 'c'://uvolnění energie kondenzátoru
                     Console.WriteLine("Zadejte napětí ve V");
                     double kondenzatorNapeti = NewDouble();
                     Console.WriteLine("Zadejte kapacitu kondenzátoru v F");
@@ -346,7 +341,7 @@ namespace consoleMAPC
                     Console.WriteLine("Výsledek je {0}.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu.", kondenzatorVysledek);//CHYBí JEDNOTKA
                     Console.ReadKey();
                     break;
-                case 'f'://proud nabití kondenzátoru
+                case 'd'://proud nabití kondenzátoru
                     Console.WriteLine("Zadejte kapacitu kondenzátoru v F");
                     double nabitKondenzatorKapacita = NewDouble();
                     Console.WriteLine("Zadejte napětí ve V");
@@ -356,13 +351,7 @@ namespace consoleMAPC
                     double nabitKondenzatorVysledek = (nabitKondenzatorNapeti*nabitKondenzatorKapacita)/nabitKondenzatorCas;
                     Console.WriteLine("Výsledek je {0} A.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu.", nabitKondenzatorVysledek);
                     Console.ReadKey();
-
-                    //smth
-                    break;
-                case 'g'://napětí na rezistorech a proudy na větvích obvodu
-                    //smth
-                    break;
-                case 'h'://permitivita
+                case 'e'://permitivita
                     FunkceDeleni("elektrickou indukci v C.m^2", "intenzitu elektrického pole v N.C^-1", "F.m^-1");
                     break;
             }
@@ -374,7 +363,8 @@ namespace consoleMAPC
             Console.Clear();
             Console.WriteLine("Optika\nCo počítáme?\na. barvu olejové skvrny na hladině voddy v odraženém bílém světle\nb. vlnovou délku světla\nc. vzdálenost předmětu od zrcadla\nd. zvětšení obrazu v zakřiveném zrcadle\n");
             localChoice = char.ToLower(Console.ReadKey().KeyChar);
-            while ((localChoice != 'a') && (localChoice != 'b') && (localChoice != 'c') && (localChoice != 'd'))
+            //možnost dodat: vzdálenost předmětu od zrcadla, zvětšení obrazu v zakřiveném zrcadle
+            while ((localChoice != 'a') && (localChoice != 'b'))
             {
                 Console.WriteLine("Prosím vyberte možnost a-i");
                 localChoice = char.ToLower(Console.ReadKey().KeyChar);
@@ -392,12 +382,6 @@ namespace consoleMAPC
                     double svetloFrekVysl = 300000/svetloFrek;
                     Console.WriteLine("Výsledek je {0} nm.\n Stiskem jakékoliv klávesy se vrátítte do hlavního menu", svetloFrekVysl);
                     Console.ReadKey();
-                    break;
-                case 'c':
-                    //vzdálenost předmětu od zrcadla
-                    break;
-                case 'd':
-                    //zvětšení obrazu v zakřiveném zrcadle
                     break;
             }
             Menu();
