@@ -281,7 +281,6 @@ namespace consoleMAPC
                     {
                         Console.WriteLine("Chyba: Neplatná volba");
                     }
-                    
                     break;
                 case 'c'://frekvence harmonického tónu
                     Console.WriteLine("Zadejte délku struny v m");
@@ -291,7 +290,6 @@ namespace consoleMAPC
                     double vyslednaFrekvence = rychlostVlneni/(2*delkaStruny);
                     Console.WriteLine("Výsledná frekvence je {0} Hz.\nStisknutím jakéhokoliv tlačítka se vrátíte zpět do hlavního menu.", vyslednaFrekvence);
                     Console.ReadKey();
-                    //something
                     break;
             }
             Menu();
@@ -351,6 +349,7 @@ namespace consoleMAPC
                     double nabitKondenzatorVysledek = (nabitKondenzatorNapeti*nabitKondenzatorKapacita)/nabitKondenzatorCas;
                     Console.WriteLine("Výsledek je {0} A.\nStisknutím jakéhokoliv tlačítka se vrátíte do hlavního menu.", nabitKondenzatorVysledek);
                     Console.ReadKey();
+                    break;
                 case 'e'://permitivita
                     FunkceDeleni("elektrickou indukci v C.m^2", "intenzitu elektrického pole v N.C^-1", "F.m^-1");
                     break;
@@ -374,13 +373,15 @@ namespace consoleMAPC
                 case 'a':
                     Console.WriteLine("Zadejte tloušťku skvrny μm");
                     double skvrnaTloustka = NewDouble();
-                    //WHAT
+                    double vyslednaVlnovaDelka = ((4*1.5*skvrnaTloustka*Math.Pow(10, -6)));
+                    Console.WriteLine("Pro k=2 je vlnová délka {0} nm.\nStiskem jakékoliv klávesy se vrátítte do hlavního menu", vyslednaVlnovaDelka);
+                    Console.ReadKey();
                     break;
                 case 'b'://vlnová délka světla
                     Console.WriteLine("Zadejte frekvenci světla v Hz");
                     double svetloFrek = NewDouble();
                     double svetloFrekVysl = 300000/svetloFrek;
-                    Console.WriteLine("Výsledek je {0} nm.\n Stiskem jakékoliv klávesy se vrátítte do hlavního menu", svetloFrekVysl);
+                    Console.WriteLine("Výsledek je {0} nm.\nStiskem jakékoliv klávesy se vrátítte do hlavního menu", svetloFrekVysl);
                     Console.ReadKey();
                     break;
             }
