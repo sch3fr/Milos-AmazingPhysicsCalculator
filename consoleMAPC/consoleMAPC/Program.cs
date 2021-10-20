@@ -52,7 +52,7 @@ namespace consoleMAPC
         public static void Menu()
         {
             Console.Clear();
-            Console.WriteLine("Milošova kvalitní fyzikální kalkulačka <3 v 0.2.0");
+            Console.WriteLine("Milošova kvalitní fyzikální kalkulačka <3 v 1.0");
             Console.WriteLine("\nVyberte si obor, z něhož je váš příklad.");
             Console.WriteLine("\n1. Mechanika\n2. Molekulová fyzika a termika\n3. Mechanické kmitání a vlnění\n4. Elektřina a magnetismus\n5. Optika\n6. Teorie relativity\n7. Fyzika mikrosvěta\n\nZmáčkněte 0 pro ukončení programu.");
         }
@@ -172,7 +172,7 @@ namespace consoleMAPC
                 case 'a'://kinetická energie
                     Console.WriteLine("Zadejte hmotnost tělesa v g");
                     double kinetHmotnost = NewDouble();
-                    Console.WriteLine("Zadejte rychlost tělesa v m*s -1");
+                    Console.WriteLine("Zadejte rychlost tělesa v m*s^-1");
                     double kinetRychlost = NewDouble();
                     double kinetVysledek = (1/2)*kinetHmotnost*kinetRychlost*kinetRychlost;
                     Console.WriteLine("Výsledná energie je {0}.\nStiskem jakéhokoliv tlačítka se vrátíte hlavního do menu.", kinetVysledek);//chybí jednotka
@@ -201,10 +201,9 @@ namespace consoleMAPC
                     Console.WriteLine("Výsledek je {0} °C.\nStiskem jakéhokoliv tlačítka se vrátíte hlavního do menu.", rovnovaznaVysledek);
                     break;
                 case 'd'://tlak ideálního plynu
-                    ///TODO opravit jednotky
                     Console.WriteLine("Zadejte teplotu v K");
                     double idealnipTeplota = NewDouble();
-                    Console.WriteLine("Zadejte objem v m3");
+                    Console.WriteLine("Zadejte objem v m^3");
                     double idealnipObjem =  NewDouble();
                     Console.WriteLine("Zadejte počet molekul formou exponentu\n(Pokud je počet molekul např. 10 na 24, zadejte 24.)");
                     double idealnipExponent =  NewDouble();
@@ -226,7 +225,7 @@ namespace consoleMAPC
                     double deformDelkaP = NewDouble();
                     Console.WriteLine("Zadejte změnu délky v m");
                     double deformDelkaZ = NewDouble();
-                    Console.WriteLine("Zadejte obsah objektu v m2");
+                    Console.WriteLine("Zadejte obsah objektu v m^2");
                     double deformObsah = NewDouble();
                     Console.WriteLine("Zadejte modul pružnosti tahu materiálu v Pa");
                     double deformPruznost = NewDouble();
