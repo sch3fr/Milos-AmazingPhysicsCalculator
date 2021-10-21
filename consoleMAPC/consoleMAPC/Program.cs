@@ -257,29 +257,25 @@ namespace consoleMAPC
             }
             switch (localChoice)
             {
-                case 'a'://amplituda výchylky NEFUNGUJE
-                    Console.WriteLine("ZATíM NEFUNGUJE///Zadejte okamžitou výchylku");
+                case 'a'://amplituda výchylky
+                    Console.WriteLine("Zadejte okamžitou výchylku v m");
                     double vychylka = NewDouble();
                     Console.WriteLine("Zadajte čas");
                     double cas = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Zadejte periodu");
+                    double perioda = NewDouble();
+                    double amplitudaVysledek = (vychylka/(Matk.Sin(((2*Math.Pi)/perioda)*cas)));
+                    Console.WriteLine("Výsledná amplituda výchylky je {0} m.\nStiskem jakéhokoliv tlačítka se vrátíte hlavního do menu.", amplitudaVysledek);
                     break;
                 case 'b'://okamžitá výchylka
                     Console.WriteLine("Zadejte amplitudu");
                     double vychylkaAmplituda = NewDouble();
-                    Console.WriteLine("Je zadaná frekvence nebo perioda? Zvolte F/P");
-                    char volba = char.ToLower(Console.ReadKey().KeyChar);
-                    if (volba == 't')
-                    {
-                        double vychylkaPerioda = NewDouble();
-                    }
-                    else if (volba == 'f')
-                    {
-                        double vychylkaFrekvence = NewDouble();
-                    }
-                    else
-                    {
-                        Console.WriteLine("Chyba: Neplatná volba");
-                    }
+                    Console.WriteLine("Zadejte periodu");
+                    double vychylkaPerioda = NewDouble();
+                    Console.WriteLine("Zadejte čas v s");
+                    double vychylkaCas = NewDouble;
+                    double vychylkaVysledek = (vychylkaAmplituda*Math.Sin(((2*Math.PI)/vychylkaPerioda)*vychylkaCas));
+                    Console.WriteLine("Výsledná výchylka je {0} m.\nStiskem jakéhokoliv tlačítka se vrátíte hlavního do menu.", vychylkaVysledek);
                     break;
                 case 'c'://frekvence harmonického tónu
                     Console.WriteLine("Zadejte délku struny v m");
