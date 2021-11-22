@@ -8,4 +8,4 @@ Clean up the code, change all Czech text to English.
 Version with UI is currently developed as part of my school semestral project. I'll merge it here later.
 ## Credits
 Shout out to Paleček, since he came up with the idea, but said the way he implemented was slow. This might be a cool challenge.<br/>
-Made with love for Milos' shiny bald head <3
+Made with love for Milos' shiny bald head <4
