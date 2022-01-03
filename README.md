@@ -3,9 +3,11 @@ Milošova kvalitní fyzikální kalkulačka (internationally Milos' Amazing Phys
 ## Console version
 The console version is somewhat compete, I used it as a learning project during the 100DaysOfCode challenge.
 ### ToDo
-Clean up the code, change all Czech text to English.
+Clean up the code, change all Czech text to English.<br/>
+Add all missing features to UI version of the application.<br/>
+Migrate from WinForms so WPF
 ## UI version
-Version with UI is currently developed as part of my school semestral project. I'll merge it here later.
+UI version is live now. It is missing some features compared to the console version, but I was on kinda tight deadline. I want to add all the features later.
 ## Credits
 Shout out to Paleček, since he came up with the idea, but said the way he implemented was slow. This might be a cool challenge.<br/>
 Made with love for Milos' shiny bald head <4
