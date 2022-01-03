@@ -1,0 +1,10 @@
+C:\Users\sch3f\source\repos\PEF\KTSW\Mine\FyzikalniKalkulacka\FyzikalniKalkulacka\bin\Debug\FyzikalniKalkulacka.exe.config
+C:\Users\sch3f\source\repos\PEF\KTSW\Mine\FyzikalniKalkulacka\FyzikalniKalkulacka\bin\Debug\FyzikalniKalkulacka.exe
+C:\Users\sch3f\source\repos\PEF\KTSW\Mine\FyzikalniKalkulacka\FyzikalniKalkulacka\bin\Debug\FyzikalniKalkulacka.pdb
+C:\Users\sch3f\source\repos\PEF\KTSW\Mine\FyzikalniKalkulacka\FyzikalniKalkulacka\obj\Debug\FyzikalniKalkulacka.csproj.AssemblyReference.cache
+C:\Users\sch3f\source\repos\PEF\KTSW\Mine\FyzikalniKalkulacka\FyzikalniKalkulacka\obj\Debug\FyzikalniKalkulacka.Form1.resources
+C:\Users\sch3f\source\repos\PEF\KTSW\Mine\FyzikalniKalkulacka\FyzikalniKalkulacka\obj\Debug\FyzikalniKalkulacka.Properties.Resources.resources
+C:\Users\sch3f\source\repos\PEF\KTSW\Mine\FyzikalniKalkulacka\FyzikalniKalkulacka\obj\Debug\FyzikalniKalkulacka.csproj.GenerateResource.cache
+C:\Users\sch3f\source\repos\PEF\KTSW\Mine\FyzikalniKalkulacka\FyzikalniKalkulacka\obj\Debug\FyzikalniKalkulacka.csproj.CoreCompileInputs.cache
+C:\Users\sch3f\source\repos\PEF\KTSW\Mine\FyzikalniKalkulacka\FyzikalniKalkulacka\obj\Debug\FyzikalniKalkulacka.exe
+C:\Users\sch3f\source\repos\PEF\KTSW\Mine\FyzikalniKalkulacka\FyzikalniKalkulacka\obj\Debug\FyzikalniKalkulacka.pdb
