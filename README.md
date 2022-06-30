@@ -1,5 +1,8 @@
+# IMPORTANT
+Both versions of this project will be refractored soon™. By that I mean in the following weeks. I thought I was being smart by not using million if-else branches. It took me way too long to realize that million switch cases is not any better.
+
 # Milos-AmazingPhysicsCalculator
-Milošova kvalitní fyzikální kalkulačka (internationally Milos' Amazing Physics Calculator) is a windows application that helps with solving physics problems taught at the all mighty GYMKC. First version will be a console app. I hope to bring it to WPF later.<br/>
+Milošova kvalitní fyzikální kalkulačka (internationally known as the Milos' Amazing Physics Calculator) is a windows application that helps with solving physics problems taught at the all mighty GYMKC. First version will be a console app. I hope to bring it to WPF later.<br/>
 ## Console version
 The console version is somewhat compete, I used it as a learning project during the 100DaysOfCode challenge.
 ### ToDo
