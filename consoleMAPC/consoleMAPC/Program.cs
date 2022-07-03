@@ -1,17 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace consoleMAPC
 {
     class Program
     {
         static void Main(string[] args)
-            //TODO převodník jednotek
-            //     delete default switch cases //1.OCT.21 Y THO??? WHAT DID I MEAN bY THAT???
-            //     JAKOU HODNOTU MÁ PLANCKOVA KONSTANTA???
         {
             bool quitSwitch = false; //makes the do-while loop run, thus letting user choose again and agian
             char choice; //used to navigate menu
             Menu(); //clears console window and writes wall of text
+
+            //var fields = new List<KeyValuePair<method; >>();
+            //fields.Add(new KeyValuePair<string, int>(,);
 
             do
             {
@@ -62,38 +63,6 @@ namespace consoleMAPC
             double vstup = Convert.ToDouble(Console.ReadLine());
             return vstup;
         }
-
-        public static void FunkceNasobeni(string zadani1, string zadani2, string vyslednaVelicina)
-        {
-            Console.WriteLine("Zadejte " + zadani1);
-            double firstInput = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Zadejte " + zadani2);
-            double secondInput = Convert.ToDouble(Console.ReadLine());
-            double result = firstInput * secondInput;
-            Console.WriteLine("\nVýsledek je {0} {1}", result, vyslednaVelicina);
-            Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu.");
-            Console.ReadKey();
-        }
-        public static void FunkceDeleni(string zadani1, string zadani2, string vyslednaVelicina)
-        {
-            Console.WriteLine("Zadejte " + zadani1);
-            double firstInput = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Zadejte " + zadani2);
-            double secondInput = Convert.ToDouble(Console.ReadLine());
-            double result = firstInput / secondInput;
-            Console.WriteLine("\nVýsledek je {0} {1}", result, vyslednaVelicina);
-            Console.WriteLine("Stiskem jakéhokoliv tlačítka se vrátíte hlavního do menu.");
-            Console.ReadKey();
-        }
-        
-        
-        /*public static void FunkceDeleniKonst(string zadani1, string zadani2, string konstanta, string vyslednaVelicina)
-        {
-            Console.WriteLine("Zadejte " + zadani1);
-            double firstInput = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Zadejte " + zadani2);
-            double secondInput = Convert.ToDouble(Console.ReadLine());
-        }*/
         
         public static void Mechanika() //DONE
         {
@@ -110,10 +79,10 @@ namespace consoleMAPC
             switch (localChoice)
             {
                 case 'a'://rychlost
-                    FunkceDeleni("dráhu v m", "čas v s", "m.s^-1");
+                    Calc.Devide("dráhu v m", "čas v s", "m.s^-1");
                     break;
                 case 'b'://zrychlení
-                    FunkceDeleni("změnu rychlosti v m.s^-1", "čas v s", "m.s^-2");
+                    Calc.Devide("rozdíl rychlostí v0 a v1 v m.s^-1", "čas v s", "m.s^-2");
                     break;
                 case 'c'://čas
                     Console.WriteLine("\nPočítáme dobu vzhledem k\na. rychlosti, nebo \nb. ke zrychlení?");
@@ -126,31 +95,31 @@ namespace consoleMAPC
                     if (vyber == 'a')
                     {
                         Console.WriteLine("Zvolili jste možnost a");
-                        FunkceDeleni("dráhu v m", "rychlost v m.s^-1", "s");
+                        Calc.Devide("dráhu v m", "rychlost v m.s^-1", "s");
                     }
                     else
                     {
                         Console.WriteLine("Zvolili jste b");
-                        FunkceDeleni("změnu rychlosti v m.s^-1", "zrychlení v m.s^-2", "s");
+                        Calc.Devide("rozdíl rychlostí v0 a v1 v m.s^-1", "zrychlení v m.s^-2", "s");
                     }
                     break;
                 case 'd'://dráha
-                    FunkceNasobeni("rychlost v m.s^-1", "čas v s", "m");
+                    Calc.Multiply("rychlost v m.s^-1", "čas v s", "m");
                     break;
                 case 'e'://hybnost
-                    FunkceNasobeni("hmotnost v kg", "rychlost v m.s^-1", "kg.m.s^-1");
+                    Calc.Multiply("hmotnost v kg", "rychlost v m.s^-1", "kg.m.s^-1");
                     break;
                 case 'f'://síla
-                    FunkceNasobeni("hmotnost v kg", "zrychlení v m.s^-2", "N");
+                    Calc.Multiply("hmotnost v kg", "zrychlení v m.s^-2", "N");
                     break;
                 case 'g'://výkon
-                    FunkceDeleni("práci v J", "dobu v s", "W");
+                    Calc.Devide("práci v J", "dobu v s", "W");
                     break;
                 case 'h'://tlak
-                    FunkceDeleni("sílu v N", "plochu v m^2", "Pa");
+                    Calc.Devide("sílu v N", "plochu v m^2", "Pa");
                     break;
                 case 'i'://hustota
-                    FunkceDeleni("hmotnost v kg", "objem v m^3", "kg.m^-3");
+                    Calc.Devide("hmotnost v kg", "objem v m^3", "kg.m^-3");
                     break;
             }
             Menu();
@@ -264,7 +233,7 @@ namespace consoleMAPC
                     double cas = Convert.ToDouble(Console.ReadLine());
                     Console.WriteLine("Zadejte periodu");
                     double perioda = NewDouble();
-                    double amplitudaVysledek = (vychylka/(Matk.Sin(((2*Math.Pi)/perioda)*cas)));
+                    double amplitudaVysledek = (vychylka/(Math.Sin(((2*Math.PI)/perioda)*cas)));
                     Console.WriteLine("Výsledná amplituda výchylky je {0} m.\nStiskem jakéhokoliv tlačítka se vrátíte hlavního do menu.", amplitudaVysledek);
                     break;
                 case 'b'://okamžitá výchylka
@@ -273,7 +242,7 @@ namespace consoleMAPC
                     Console.WriteLine("Zadejte periodu");
                     double vychylkaPerioda = NewDouble();
                     Console.WriteLine("Zadejte čas v s");
-                    double vychylkaCas = NewDouble;
+                    double vychylkaCas = NewDouble();
                     double vychylkaVysledek = (vychylkaAmplituda*Math.Sin(((2*Math.PI)/vychylkaPerioda)*vychylkaCas));
                     Console.WriteLine("Výsledná výchylka je {0} m.\nStiskem jakéhokoliv tlačítka se vrátíte hlavního do menu.", vychylkaVysledek);
                     break;
@@ -346,7 +315,7 @@ namespace consoleMAPC
                     Console.ReadKey();
                     break;
                 case 'e'://permitivita
-                    FunkceDeleni("elektrickou indukci v C.m^2", "intenzitu elektrického pole v N.C^-1", "F.m^-1");
+                    Calc.Devide("elektrickou indukci v C.m^2", "intenzitu elektrického pole v N.C^-1", "F.m^-1");
                     break;
             }
             Menu();
